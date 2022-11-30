@@ -38,7 +38,7 @@ import org.springframework.data.relational.core.mapping.RelationalPersistentProp
  * @author Jens Schauder
  * @since 3.0
  */
-class BatchedActions<S extends DbAction.WithPropertyPath, B extends DbAction.BatchWithValue, C> {
+final class BatchedActions<S extends DbAction.WithPropertyPath, B extends DbAction.BatchWithValue, C> {
 
 	private static final Comparator<PersistentPropertyPath<RelationalPersistentProperty>> PATH_LENGTH_COMPARATOR = //
 			Comparator.comparing(PersistentPropertyPath::getLength);
@@ -126,7 +126,7 @@ class BatchedActions<S extends DbAction.WithPropertyPath, B extends DbAction.Bat
 				Stream<Map.Entry<PersistentPropertyPath<RelationalPersistentProperty>, List<DbAction.Delete>>> sorted,
 				Consumer<? super DbAction> consumer) {
 
-			sorted.forEach((entry) -> {
+			sorted.forEach(entry -> {
 
 				List<DbAction.Delete> actions = entry.getValue();
 				if (actions.size() > 1) {
@@ -166,7 +166,7 @@ class BatchedActions<S extends DbAction.WithPropertyPath, B extends DbAction.Bat
 				Stream<Map.Entry<PersistentPropertyPath<RelationalPersistentProperty>, Map<IdValueSource, List<DbAction.Insert>>>> sorted,
 				Consumer<? super DbAction> consumer) {
 
-			sorted.forEach((entry) -> entry.getValue() //
+			sorted.forEach(entry -> entry.getValue() //
 					.forEach((idValueSource, inserts) -> consumer.accept(new DbAction.BatchInsert(inserts))));
 		}
 	}

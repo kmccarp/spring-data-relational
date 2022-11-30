@@ -49,7 +49,7 @@ import org.springframework.r2dbc.core.Parameter;
  *
  * @author Mark Paluch
  */
-public class StatementRecorder implements ConnectionFactory {
+public final class StatementRecorder implements ConnectionFactory {
 
 	private final Map<Predicate<String>, Supplier<List<Result>>> stubbings = new LinkedHashMap<>();
 	private final List<RecordedStatement> createdStatements = new ArrayList<>();
@@ -133,10 +133,8 @@ public class StatementRecorder implements ConnectionFactory {
 	 */
 	public RecordedStatement getCreatedStatement(Predicate<String> predicate) {
 
-		return createdStatements.stream().filter(recordedStatement -> {
-			return predicate.test(recordedStatement.getSql()) || predicate.test(recordedStatement.getSql().toLowerCase())
-					|| predicate.test(recordedStatement.getSql().toUpperCase());
-		}).findFirst().orElseThrow(() -> new NoSuchElementException("No statement found"));
+		return createdStatements.stream().filter(recordedStatement -> predicate.test(recordedStatement.getSql()) || predicate.test(recordedStatement.getSql().toLowerCase())
+					|| predicate.test(recordedStatement.getSql().toUpperCase())).findFirst().orElseThrow(() -> new NoSuchElementException("No statement found"));
 	}
 
 	public List<RecordedStatement> getCreatedStatements() {

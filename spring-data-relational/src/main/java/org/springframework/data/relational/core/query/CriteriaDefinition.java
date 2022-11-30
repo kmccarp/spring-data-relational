@@ -134,7 +134,7 @@ public interface CriteriaDefinition {
 	Combinator getCombinator();
 
 	enum Combinator {
-		INITIAL, AND, OR;
+		INITIAL, AND, OR
 	}
 
 	enum Comparator {

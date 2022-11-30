@@ -32,7 +32,7 @@ import org.springframework.util.Assert;
  * @author Oliver Drotbohm
  * @since 2.0
  */
-public class Update {
+public final class Update {
 
 	private static final Update EMPTY = new Update(Collections.emptyMap());
 

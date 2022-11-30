@@ -30,7 +30,7 @@ import org.springframework.data.relational.core.sql.IdentifierProcessing;
  * @author Jens Schauder
  * @author Myeonghyeon Lee
  */
-public class NonQuotingDialect extends AbstractDialect implements Dialect {
+public final class NonQuotingDialect extends AbstractDialect implements Dialect {
 
 	public static final NonQuotingDialect INSTANCE = new NonQuotingDialect();
 

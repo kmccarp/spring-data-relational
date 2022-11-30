@@ -32,7 +32,7 @@ class AnalyticFunctionVisitor extends TypedSingleConditionRenderSupport<Analytic
 	private final StringBuilder part = new StringBuilder();
 	private final RenderContext context;
 	@Nullable private PartRenderer delegate;
-	private boolean addSpace = false;
+	private boolean addSpace;
 
 	AnalyticFunctionVisitor(RenderContext context) {
 		super(context);

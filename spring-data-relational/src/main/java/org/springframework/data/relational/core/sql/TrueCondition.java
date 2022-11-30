@@ -21,7 +21,7 @@ package org.springframework.data.relational.core.sql;
  * @author Mark Paluch
  * @since 2.1
  */
-public class TrueCondition implements Condition {
+public final class TrueCondition implements Condition {
 
 	public static final TrueCondition INSTANCE = new TrueCondition();
 

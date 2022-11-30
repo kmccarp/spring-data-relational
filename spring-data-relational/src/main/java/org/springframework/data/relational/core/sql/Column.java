@@ -383,7 +383,7 @@ public class Column extends AbstractSegment implements Expression, Named {
 	/**
 	 * {@link Aliased} {@link Column} implementation.
 	 */
-	static class AliasedColumn extends Column implements Aliased {
+	static final class AliasedColumn extends Column implements Aliased {
 
 		private final SqlIdentifier alias;
 

@@ -26,7 +26,7 @@ import org.springframework.util.Assert;
  * @author Meng Zuozhu
  * @since 1.1
  */
-public class Like extends AbstractSegment implements Condition {
+public final class Like extends AbstractSegment implements Condition {
 
 	private final Expression left;
 	private final Expression right;

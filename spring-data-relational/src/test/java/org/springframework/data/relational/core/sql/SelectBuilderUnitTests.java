@@ -128,9 +128,9 @@ public class SelectBuilderUnitTests {
 		Table department = SQL.table("department");
 
 		Column name = employee.column("name").as("emp_name");
-		Column department_name = employee.column("name").as("department_name");
+		Column departmentName = employee.column("name").as("department_name");
 
-		Select select = builder.select(name, department_name).from(employee).join(department)
+		Select select = builder.select(name, departmentName).from(employee).join(department)
 				.on(SQL.column("department_id", employee)).equals(SQL.column("id", department))
 				.and(SQL.column("tenant", employee)).equals(SQL.column("tenant", department))
 				.orderBy(OrderByField.from(name).asc()).build();

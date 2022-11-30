@@ -109,10 +109,8 @@ public class MyBatisDataAccessStrategy implements DataAccessStrategy {
 				dialect.getIdentifierProcessing());
 		myBatisDataAccessStrategy.setNamespaceStrategy(namespaceStrategy);
 
-		CascadingDataAccessStrategy cascadingDataAccessStrategy = new CascadingDataAccessStrategy(
+		return new CascadingDataAccessStrategy(
 				asList(myBatisDataAccessStrategy, delegatingDataAccessStrategy));
-
-		return cascadingDataAccessStrategy;
 	}
 
 	/**

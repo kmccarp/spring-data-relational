@@ -54,7 +54,7 @@ import org.springframework.util.StringUtils;
  * @see Dialect
  * @see SpringFactoriesLoader
  */
-public class DialectResolver {
+public final class DialectResolver {
 
 	private static final Log LOG = LogFactory.getLog(DialectResolver.class);
 
@@ -101,7 +101,7 @@ public class DialectResolver {
 		Optional<Dialect> getDialect(JdbcOperations operations);
 	}
 
-	static public class DefaultDialectProvider implements JdbcDialectProvider {
+	public static class DefaultDialectProvider implements JdbcDialectProvider {
 
 		@Override
 		public Optional<Dialect> getDialect(JdbcOperations operations) {

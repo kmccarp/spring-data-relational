@@ -27,7 +27,7 @@ import org.springframework.util.StringUtils;
  * @author Mark Paluch
  * @since 1.1
  */
-public class SimpleFunction extends AbstractSegment implements Expression {
+public final class SimpleFunction extends AbstractSegment implements Expression {
 
 	private final String functionName;
 	private final List<Expression> expressions;

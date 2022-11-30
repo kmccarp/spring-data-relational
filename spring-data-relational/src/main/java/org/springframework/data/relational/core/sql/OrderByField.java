@@ -28,7 +28,7 @@ import org.springframework.util.Assert;
  * @author Milan Milanov
  * @since 1.1
  */
-public class OrderByField extends AbstractSegment {
+public final class OrderByField extends AbstractSegment {
 
 	private final Expression expression;
 	private final @Nullable Sort.Direction direction;

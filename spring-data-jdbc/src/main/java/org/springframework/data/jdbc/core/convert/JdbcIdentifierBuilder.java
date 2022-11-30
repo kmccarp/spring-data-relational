@@ -25,7 +25,7 @@ import org.springframework.util.Assert;
  * @author Jens Schauder
  * @since 1.1
  */
-public class JdbcIdentifierBuilder {
+public final class JdbcIdentifierBuilder {
 
 	private Identifier identifier;
 

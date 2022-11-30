@@ -29,7 +29,7 @@ import org.springframework.lang.Nullable;
  * @author Mark Paluch
  * @since 2.0
  */
-public class Escaper {
+public final class Escaper {
 
 	public static final Escaper DEFAULT = Escaper.of('\\');
 

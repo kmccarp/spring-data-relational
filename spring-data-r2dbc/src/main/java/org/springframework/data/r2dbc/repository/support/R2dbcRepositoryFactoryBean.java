@@ -52,7 +52,7 @@ public class R2dbcRepositoryFactoryBean<T extends Repository<S, ID>, S, ID exten
 	private @Nullable R2dbcEntityOperations operations;
 	private @Nullable ApplicationContext applicationContext;
 
-	private boolean mappingContextConfigured = false;
+	private boolean mappingContextConfigured;
 
 	/**
 	 * Creates a new {@link R2dbcRepositoryFactoryBean} for the given repository interface.

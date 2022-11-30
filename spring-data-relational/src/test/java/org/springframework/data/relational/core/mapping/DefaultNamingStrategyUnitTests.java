@@ -75,7 +75,8 @@ public class DefaultNamingStrategyUnitTests {
 	static class DummyEntity {
 
 		@Id int id;
-		LocalDateTime createdAt, lastUpdatedAt;
+		LocalDateTime createdAt;
+		LocalDateTime lastUpdatedAt;
 		List<DummySubEntity> dummySubEntities;
 	}
 }

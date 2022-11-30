@@ -29,7 +29,7 @@ import org.springframework.data.relational.core.sql.Visitable;
 class SimpleFunctionVisitor extends TypedSingleConditionRenderSupport<SimpleFunction> implements PartRenderer {
 
 	private final StringBuilder part = new StringBuilder();
-	private boolean needsComma = false;
+	private boolean needsComma;
 
 	SimpleFunctionVisitor(RenderContext context) {
 		super(context);

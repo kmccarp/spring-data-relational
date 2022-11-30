@@ -1331,7 +1331,7 @@ class JdbcAggregateTemplateIntegrationTests {
 	}
 
 	@Data
-	static abstract class VersionedAggregate {
+	abstract static class VersionedAggregate {
 
 		@Id private Long id;
 
@@ -1362,7 +1362,7 @@ class JdbcAggregateTemplateIntegrationTests {
 		@Id Long id;
 		@Version Long version;
 
-		private final static List<ConstructorInvocation> constructorInvocations = new ArrayList<>();
+		private static final List<ConstructorInvocation> constructorInvocations = new ArrayList<>();
 
 		public static void clearConstructorInvocationData() {
 			constructorInvocations.clear();

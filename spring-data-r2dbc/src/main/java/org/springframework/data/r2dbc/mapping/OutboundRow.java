@@ -58,7 +58,7 @@ public class OutboundRow implements Map<SqlIdentifier, Parameter>, Cloneable {
 
 		this.rowAsMap = new LinkedHashMap<>(map.size());
 
-		map.forEach((s, Parameter) -> this.rowAsMap.put(SqlIdentifier.unquoted(s), Parameter));
+		map.forEach((s, parameter) -> this.rowAsMap.put(SqlIdentifier.unquoted(s), parameter));
 	}
 
 	private OutboundRow(OutboundRow map) {

@@ -36,7 +36,7 @@ import org.springframework.util.LinkedCaseInsensitiveMap;
  * @see R2dbcDialect
  * @see SpringFactoriesLoader
  */
-public class DialectResolver {
+public final class DialectResolver {
 
 	private static final List<R2dbcDialectProvider> DETECTORS = SpringFactoriesLoader
 			.loadFactories(R2dbcDialectProvider.class, DialectResolver.class.getClassLoader());
@@ -58,11 +58,9 @@ public class DialectResolver {
 				.map(it -> it.getDialect(connectionFactory)) //
 				.flatMap(Optionals::toStream) //
 				.findFirst() //
-				.orElseThrow(() -> {
-					return new NoDialectException(
+				.orElseThrow(() -> new NoDialectException(
 							String.format("Cannot determine a dialect for %s using %s; Please provide a Dialect",
-									connectionFactory.getMetadata().getName(), connectionFactory));
-				});
+									connectionFactory.getMetadata().getName(), connectionFactory)));
 	}
 
 	/**

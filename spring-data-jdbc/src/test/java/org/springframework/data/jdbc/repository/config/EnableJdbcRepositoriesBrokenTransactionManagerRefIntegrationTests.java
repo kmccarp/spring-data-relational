@@ -45,7 +45,7 @@ public class EnableJdbcRepositoriesBrokenTransactionManagerRefIntegrationTests {
 
 	@Test // DATAJDBC-622
 	public void missingTransactionManagerCausesException() {
-		assertThatExceptionOfType(NoSuchBeanDefinitionException.class).isThrownBy(() -> repository.findAll());
+		assertThatExceptionOfType(NoSuchBeanDefinitionException.class).isThrownBy(repository::findAll);
 	}
 
 	interface DummyRepository extends CrudRepository<DummyEntity, Long> {

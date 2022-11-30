@@ -23,7 +23,7 @@ import org.springframework.util.Assert;
  * @author Jens Schauder
  * @since 2.3
  */
-public class Cast extends AbstractSegment implements Expression {
+public final class Cast extends AbstractSegment implements Expression {
 
 	private final String targetType;
 	private final Expression expression;
