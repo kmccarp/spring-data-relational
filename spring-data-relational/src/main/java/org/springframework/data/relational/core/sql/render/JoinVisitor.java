@@ -33,8 +33,8 @@ class JoinVisitor extends TypedSubtreeVisitor<Join> {
 	private final StringBuilder joinClause = new StringBuilder();
 	private final FromTableVisitor fromTableVisitor;
 	private final ConditionVisitor conditionVisitor;
-	private boolean inCondition = false;
-	private boolean hasSeenCondition = false;
+	private boolean inCondition;
+	private boolean hasSeenCondition;
 
 	JoinVisitor(RenderContext context, RenderTarget parent) {
 

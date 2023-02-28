@@ -57,7 +57,7 @@ public class UpdateMapperUnitTests {
 
 		BoundAssignments mapped = map(update);
 
-		Map<SqlIdentifier, Expression> assignments = mapped.getAssignments().stream().map(it -> (AssignValue) it)
+		Map<SqlIdentifier, Expression> assignments = mapped.getAssignments().stream().map(AssignValue.class::cast)
 				.collect(Collectors.toMap(k -> k.getColumn().getName(), AssignValue::getValue));
 
 		assertThat(assignments).containsEntry(SqlIdentifier.unquoted("another_name"), SQL.bindMarker("$1"));
@@ -70,7 +70,7 @@ public class UpdateMapperUnitTests {
 
 		BoundAssignments mapped = map(update);
 
-		Map<SqlIdentifier, Expression> assignments = mapped.getAssignments().stream().map(it -> (AssignValue) it)
+		Map<SqlIdentifier, Expression> assignments = mapped.getAssignments().stream().map(AssignValue.class::cast)
 				.collect(Collectors.toMap(k -> k.getColumn().getName(), AssignValue::getValue));
 
 		assertThat(assignments).containsEntry(SqlIdentifier.unquoted("another_name"), SQL.bindMarker("$1"));
@@ -100,7 +100,7 @@ public class UpdateMapperUnitTests {
 
 		BoundAssignments mapped = map(update);
 
-		Map<SqlIdentifier, Expression> assignments = mapped.getAssignments().stream().map(it -> (AssignValue) it)
+		Map<SqlIdentifier, Expression> assignments = mapped.getAssignments().stream().map(AssignValue.class::cast)
 				.collect(Collectors.toMap(k -> k.getColumn().getName(), AssignValue::getValue));
 
 		assertThat(update.getAssignments()).hasSize(3);

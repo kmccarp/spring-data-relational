@@ -41,26 +41,26 @@ import com.mysql.cj.jdbc.MysqlDataSource;
 @Profile("mysql")
 class MySqlDataSourceConfiguration extends DataSourceConfiguration implements InitializingBean {
 
-	private static MySQLContainer<?> MYSQL_CONTAINER;
+	private static MySQLContainer<?> mysqlContainer;
 
 	@Override
 	protected DataSource createDataSource() {
 
-		if (MYSQL_CONTAINER == null) {
+		if (mysqlContainer == null) {
 
 			MySQLContainer<?> container = new MySQLContainer<>("mysql:8.0.29").withUsername("test").withPassword("test")
 					.withConfigurationOverride("");
 
 			container.start();
 
-			MYSQL_CONTAINER = container;
+			mysqlContainer = container;
 		}
 
 		MysqlDataSource dataSource = new MysqlDataSource();
-		dataSource.setUrl(MYSQL_CONTAINER.getJdbcUrl());
+		dataSource.setUrl(mysqlContainer.getJdbcUrl());
 		dataSource.setUser("root");
-		dataSource.setPassword(MYSQL_CONTAINER.getPassword());
-		dataSource.setDatabaseName(MYSQL_CONTAINER.getDatabaseName());
+		dataSource.setPassword(mysqlContainer.getPassword());
+		dataSource.setDatabaseName(mysqlContainer.getDatabaseName());
 
 		return dataSource;
 	}
@@ -77,10 +77,10 @@ class MySqlDataSourceConfiguration extends DataSourceConfiguration implements In
 	private DataSource createRootDataSource() {
 
 		MysqlDataSource dataSource = new MysqlDataSource();
-		dataSource.setUrl(MYSQL_CONTAINER.getJdbcUrl());
+		dataSource.setUrl(mysqlContainer.getJdbcUrl());
 		dataSource.setUser("root");
-		dataSource.setPassword(MYSQL_CONTAINER.getPassword());
-		dataSource.setDatabaseName(MYSQL_CONTAINER.getDatabaseName());
+		dataSource.setPassword(mysqlContainer.getPassword());
+		dataSource.setDatabaseName(mysqlContainer.getDatabaseName());
 
 		return dataSource;
 	}

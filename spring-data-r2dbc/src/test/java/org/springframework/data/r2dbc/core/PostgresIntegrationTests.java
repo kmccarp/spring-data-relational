@@ -247,12 +247,10 @@ public class PostgresIntegrationTests extends R2dbcIntegrationTestSupport {
 				.verifyComplete();
 
 		template.selectOne(Query.empty(), WithBlobs.class) //
-				.flatMap(it -> {
-					return Flux.from(it.byteBlob.stream()).last().map(blob -> {
+				.flatMap(it -> Flux.from(it.byteBlob.stream()).last().map(blob -> {
 						it.byteBlob = Blob.from(Mono.just(blob));
 						return it;
-					});
-				}).as(StepVerifier::create) //
+					})).as(StepVerifier::create) //
 				.consumeNextWith(actual -> {
 
 					CompletableFuture<byte[]> cf = Mono.from(actual.byteBlob.stream()).map(Unpooled::wrappedBuffer)
@@ -268,12 +266,10 @@ public class PostgresIntegrationTests extends R2dbcIntegrationTestSupport {
 				.expectNextCount(1).verifyComplete();
 
 		template.selectOne(Query.empty(), WithBlobs.class) //
-				.flatMap(it -> {
-					return Flux.from(it.byteBlob.stream()).last().map(blob -> {
+				.flatMap(it -> Flux.from(it.byteBlob.stream()).last().map(blob -> {
 						it.byteBlob = Blob.from(Mono.just(blob));
 						return it;
-					});
-				}).as(StepVerifier::create) //
+					})).as(StepVerifier::create) //
 				.consumeNextWith(actual -> {
 
 					CompletableFuture<byte[]> cf = Mono.from(actual.byteBlob.stream()).map(Unpooled::wrappedBuffer)

@@ -30,7 +30,7 @@ import java.util.Arrays;
  */
 public class SqlIdentifierParameterSourceUnitTests {
 
-	private IdentifierProcessing identifierProcessing = IdentifierProcessing.ANSI;
+	private final IdentifierProcessing identifierProcessing = IdentifierProcessing.ANSI;
 
 	@Test // DATAJDBC-386
 	public void empty() {

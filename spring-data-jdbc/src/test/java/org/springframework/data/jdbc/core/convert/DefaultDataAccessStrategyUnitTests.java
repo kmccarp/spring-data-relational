@@ -47,11 +47,11 @@ class DefaultDataAccessStrategyUnitTests {
 
 	static final long ORIGINAL_ID = 4711L;
 
-	private NamedParameterJdbcOperations namedJdbcOperations = mock(NamedParameterJdbcOperations.class);
-	private JdbcOperations jdbcOperations = mock(JdbcOperations.class);
-	private RelationalMappingContext context = new JdbcMappingContext();
-	private SqlParametersFactory sqlParametersFactory = mock(SqlParametersFactory.class);
-	private InsertStrategyFactory insertStrategyFactory = mock(InsertStrategyFactory.class);
+	private final NamedParameterJdbcOperations namedJdbcOperations = mock(NamedParameterJdbcOperations.class);
+	private final JdbcOperations jdbcOperations = mock(JdbcOperations.class);
+	private final RelationalMappingContext context = new JdbcMappingContext();
+	private final SqlParametersFactory sqlParametersFactory = mock(SqlParametersFactory.class);
+	private final InsertStrategyFactory insertStrategyFactory = mock(InsertStrategyFactory.class);
 
 	private JdbcConverter converter;
 	private DefaultDataAccessStrategy accessStrategy;
