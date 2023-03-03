@@ -184,8 +184,8 @@ public class MappingR2dbcConverter extends BasicRelationalConverter implements R
 
 			return readValue(value, property.getTypeInformation());
 
-		} catch (Exception o_O) {
-			throw new MappingException(String.format("Could not read property %s from column %s", property, identifier), o_O);
+		} catch (Exception oO) {
+			throw new MappingException(String.format("Could not read property %s from column %s", property, identifier), oO);
 		}
 	}
 
@@ -562,9 +562,7 @@ public class MappingR2dbcConverter extends BasicRelationalConverter implements R
 
 		Optional<Class<?>> writeTarget = getConversions().getCustomWriteTarget(valueType);
 
-		return writeTarget.orElseGet(() -> {
-			return Enum.class.isAssignableFrom(valueType) ? String.class : valueType;
-		});
+		return writeTarget.orElseGet(() -> Enum.class.isAssignableFrom(valueType) ? String.class : valueType);
 	}
 
 	@Override

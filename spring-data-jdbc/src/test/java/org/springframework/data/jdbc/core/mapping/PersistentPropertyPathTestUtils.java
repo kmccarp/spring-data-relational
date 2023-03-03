@@ -30,7 +30,7 @@ public class PersistentPropertyPathTestUtils {
 	public static PersistentPropertyPath<RelationalPersistentProperty> getPath(RelationalMappingContext context,
 			String path, Class<?> baseType) {
 
-		return context.findPersistentPropertyPaths(baseType, p -> p.isEntity()) //
+		return context.findPersistentPropertyPaths(baseType, PersistentProperty::isEntity) //
 				.filter(p -> p.toDotPath().equals(path)) //
 				.stream() //
 				.findFirst() //

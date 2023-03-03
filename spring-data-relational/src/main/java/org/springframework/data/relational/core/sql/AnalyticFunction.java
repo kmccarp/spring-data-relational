@@ -23,7 +23,7 @@ import java.util.Arrays;
  * @author Jens Schauder
  * @since 2.7
  */
-public class AnalyticFunction extends AbstractSegment implements Expression {
+public final class AnalyticFunction extends AbstractSegment implements Expression {
 
 	private final SimpleFunction function;
 	private final Partition partition;

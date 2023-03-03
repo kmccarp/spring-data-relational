@@ -48,7 +48,7 @@ import org.springframework.r2dbc.core.binding.BindTarget;
  */
 class QueryMapperUnitTests {
 
-	private BindTarget bindTarget = mock(BindTarget.class);
+	private final BindTarget bindTarget = mock(BindTarget.class);
 	private QueryMapper mapper = createMapper(PostgresDialect.INSTANCE);
 
 	QueryMapper createMapper(R2dbcDialect dialect) {

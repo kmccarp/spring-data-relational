@@ -29,14 +29,14 @@ import org.springframework.data.relational.core.sql.Where;
  */
 class UpdateStatementVisitor extends DelegatingVisitor implements PartRenderer {
 
-	private StringBuilder builder = new StringBuilder();
-	private StringBuilder table = new StringBuilder();
-	private StringBuilder assignments = new StringBuilder();
-	private StringBuilder where = new StringBuilder();
+	private final StringBuilder builder = new StringBuilder();
+	private final StringBuilder table = new StringBuilder();
+	private final StringBuilder assignments = new StringBuilder();
+	private final StringBuilder where = new StringBuilder();
 
-	private FromTableVisitor tableVisitor;
-	private AssignmentVisitor assignmentVisitor;
-	private WhereClauseVisitor whereClauseVisitor;
+	private final FromTableVisitor tableVisitor;
+	private final AssignmentVisitor assignmentVisitor;
+	private final WhereClauseVisitor whereClauseVisitor;
 
 	UpdateStatementVisitor(RenderContext context) {
 
