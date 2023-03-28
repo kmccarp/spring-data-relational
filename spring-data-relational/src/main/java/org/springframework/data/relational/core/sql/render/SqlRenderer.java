@@ -29,7 +29,7 @@ import org.springframework.util.Assert;
  * @since 1.1
  * @see RenderContext
  */
-public class SqlRenderer implements Renderer {
+public final class SqlRenderer implements Renderer {
 
 	private final RenderContext context;
 

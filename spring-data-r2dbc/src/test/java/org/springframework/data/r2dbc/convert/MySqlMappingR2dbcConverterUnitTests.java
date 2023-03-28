@@ -44,7 +44,7 @@ import org.springframework.data.relational.core.mapping.RelationalMappingContext
  */
 class MySqlMappingR2dbcConverterUnitTests {
 
-	private RelationalMappingContext mappingContext = new R2dbcMappingContext();
+	private final RelationalMappingContext mappingContext = new R2dbcMappingContext();
 	private MappingR2dbcConverter converter = new MappingR2dbcConverter(mappingContext);
 
 	@BeforeEach
