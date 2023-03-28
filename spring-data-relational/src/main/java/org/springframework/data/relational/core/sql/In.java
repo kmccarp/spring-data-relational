@@ -30,7 +30,7 @@ import org.springframework.util.StringUtils;
  * @author Mark Paluch
  * @since 1.1
  */
-public class In extends AbstractSegment implements Condition {
+public final class In extends AbstractSegment implements Condition {
 
 	private final Expression left;
 	private final Collection<Expression> expressions;

@@ -60,7 +60,7 @@ public class BasicRelationalPersistentPropertyUnitTests {
 		RelationalPersistentProperty listProperty = entity.getRequiredPersistentProperty("someList");
 
 		PersistentPropertyPath<RelationalPersistentProperty> path = context
-				.findPersistentPropertyPaths(DummyEntity.class, p -> p.getName().equals("someList")).getFirst()
+				.findPersistentPropertyPaths(DummyEntity.class, p -> "someList".equals(p.getName())).getFirst()
 				.orElseThrow(() -> new AssertionFailedError("Couldn't find path for 'someList'"));
 
 		assertThat(listProperty.getReverseColumnName(new PersistentPropertyPathExtension(context, path)))
