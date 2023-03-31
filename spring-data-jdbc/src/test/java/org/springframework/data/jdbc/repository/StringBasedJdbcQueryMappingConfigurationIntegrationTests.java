@@ -60,8 +60,8 @@ import org.springframework.transaction.annotation.Transactional;
 @ExtendWith(SpringExtension.class)
 public class StringBasedJdbcQueryMappingConfigurationIntegrationTests {
 
-	private final static String CAR_MODEL = "ResultSetExtractor Car";
-	private final static String VALUE_PROCESSED_BY_SERVICE = "Value Processed by Service";
+	private static final String CAR_MODEL = "ResultSetExtractor Car";
+	private static final String VALUE_PROCESSED_BY_SERVICE = "Value Processed by Service";
 
 	@Configuration
 	@Import(TestConfiguration.class)
@@ -189,7 +189,7 @@ public class StringBasedJdbcQueryMappingConfigurationIntegrationTests {
 		List<String> names = carRepository.findByNameWithRowMapperBean();
 
 		assertThat(names).hasSize(1);
-		assertThat(names).allMatch(name -> VALUE_PROCESSED_BY_SERVICE.equals(name));
+		assertThat(names).allMatch(VALUE_PROCESSED_BY_SERVICE::equals);
 	}
 
 	@Test // DATAJDBC-430

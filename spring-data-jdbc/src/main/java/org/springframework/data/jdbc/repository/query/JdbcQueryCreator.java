@@ -334,7 +334,7 @@ class JdbcQueryCreator extends RelationalQueryCreator<ParametrizedQuery> {
 	/**
 	 * Value object representing a {@code JOIN} association.
 	 */
-	static private final class Join {
+	private static final class Join {
 
 		private final Table joinTable;
 		private final Column joinColumn;
@@ -354,10 +354,12 @@ class JdbcQueryCreator extends RelationalQueryCreator<ParametrizedQuery> {
 		@Override
 		public boolean equals(@Nullable Object o) {
 
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 			Join join = (Join) o;
 			return joinTable.equals(join.joinTable) && joinColumn.equals(join.joinColumn) && parentId.equals(join.parentId);
 		}

@@ -36,7 +36,7 @@ import org.springframework.r2dbc.core.Parameter;
  * To create an instance of this class, invoke <code>{@link Assertions#assertThat(OutboundRow)}</code>.
  * <p>
  */
-public class OutboundRowAssert extends AbstractMapAssert<OutboundRowAssert, OutboundRow, SqlIdentifier, Parameter> {
+public final class OutboundRowAssert extends AbstractMapAssert<OutboundRowAssert, OutboundRow, SqlIdentifier, Parameter> {
 
 	private OutboundRowAssert(OutboundRow actual) {
 		super(actual, OutboundRowAssert.class);

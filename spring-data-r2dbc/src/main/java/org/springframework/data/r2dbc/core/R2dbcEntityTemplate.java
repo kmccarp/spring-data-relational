@@ -812,7 +812,7 @@ public class R2dbcEntityTemplate implements R2dbcEntityOperations, BeanFactoryAw
 	 *
 	 * @param <T>
 	 */
-	private static class UnwrapOptionalFetchSpecAdapter<T> implements RowsFetchSpec<T> {
+	private static final class UnwrapOptionalFetchSpecAdapter<T> implements RowsFetchSpec<T> {
 
 		private final RowsFetchSpec<Optional<T>> delegate;
 
@@ -842,7 +842,7 @@ public class R2dbcEntityTemplate implements R2dbcEntityOperations, BeanFactoryAw
 	 *
 	 * @param <T>
 	 */
-	private class EntityCallbackAdapter<T> implements RowsFetchSpec<T> {
+	private final class EntityCallbackAdapter<T> implements RowsFetchSpec<T> {
 
 		private final RowsFetchSpec<T> delegate;
 		private final SqlIdentifier tableName;

@@ -40,7 +40,7 @@ class AggregateReferenceConvertersUnitTests {
 	void setUp() {
 		conversionService = new DefaultConversionService();
 		AggregateReferenceConverters.getConvertersToRegister(DefaultConversionService.getSharedInstance())
-				.forEach(it -> conversionService.addConverter(it));
+				.forEach(conversionService::addConverter);
 	}
 
 	@Test // GH-992

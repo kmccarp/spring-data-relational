@@ -29,8 +29,8 @@ class InVisitor extends TypedSingleConditionRenderSupport<In> {
 
 	private final RenderTarget target;
 	private final StringBuilder part = new StringBuilder();
-	private boolean needsComma = false;
-	private boolean notIn = false;
+	private boolean needsComma;
+	private boolean notIn;
 
 	InVisitor(RenderContext context, RenderTarget target) {
 		super(context);

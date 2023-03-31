@@ -51,7 +51,7 @@ public class R2dbcApp {
 
     template.select(Person.class)
       .first()
-      .doOnNext(it -> log.info(it))
+      .doOnNext(log::info)
       .as(StepVerifier::create)
       .expectNextCount(1)
       .verifyComplete();
