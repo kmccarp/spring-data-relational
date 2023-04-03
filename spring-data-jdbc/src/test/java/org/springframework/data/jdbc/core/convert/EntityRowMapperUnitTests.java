@@ -936,7 +936,7 @@ public class EntityRowMapperUnitTests {
 
 	private static class ResultSetAnswer implements Answer<Object> {
 
-		private List<String> names;
+		private final List<String> names;
 		private final List<Map<String, Object>> values;
 		private int index = -1;
 
@@ -1141,10 +1141,10 @@ public class EntityRowMapperUnitTests {
 
 	private static class FixtureBuilder<T> implements SetValue<T>, SetColumns<T>, SetExpectation<T> {
 
-		private List<Object> values = new ArrayList<>();
-		private List<String> columns = new ArrayList<>();
+		private final List<Object> values = new ArrayList<>();
+		private final List<String> columns = new ArrayList<>();
 		private String explainingColumn;
-		private List<Expectation<T>> expectations = new ArrayList<>();
+		private final List<Expectation<T>> expectations = new ArrayList<>();
 
 		@Override
 		public SetColumns<T> value(Object value) {

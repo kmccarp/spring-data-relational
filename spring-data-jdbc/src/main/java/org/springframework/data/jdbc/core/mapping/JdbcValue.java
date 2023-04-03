@@ -57,10 +57,12 @@ public class JdbcValue {
 	@Override
 	public boolean equals(@Nullable Object o) {
 
-		if (this == o)
+		if (this == o) {
 			return true;
-		if (o == null || getClass() != o.getClass())
+		}
+		if (o == null || getClass() != o.getClass()) {
 			return false;
+		}
 		JdbcValue jdbcValue = (JdbcValue) o;
 		return Objects.equals(value, jdbcValue.value) && jdbcType == jdbcValue.jdbcType;
 	}

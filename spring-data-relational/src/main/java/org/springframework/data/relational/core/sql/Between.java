@@ -27,7 +27,7 @@ import org.springframework.util.Assert;
  * @author Meng Zuozhu
  * @since 2.2
  */
-public class Between extends AbstractSegment implements Condition {
+public final class Between extends AbstractSegment implements Condition {
 
 	private final Expression column;
 	private final Expression begin;

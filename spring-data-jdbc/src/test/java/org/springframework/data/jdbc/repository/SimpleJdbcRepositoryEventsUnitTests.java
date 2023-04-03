@@ -77,7 +77,7 @@ class SimpleJdbcRepositoryEventsUnitTests {
 
 	private static final long generatedId = 4711L;
 
-	private CollectingEventPublisher publisher = new CollectingEventPublisher();
+	private final CollectingEventPublisher publisher = new CollectingEventPublisher();
 
 	private DummyEntityRepository repository;
 	private DefaultDataAccessStrategy dataAccessStrategy;

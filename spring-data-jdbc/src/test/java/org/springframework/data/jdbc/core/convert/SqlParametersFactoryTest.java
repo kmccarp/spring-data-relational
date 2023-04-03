@@ -204,7 +204,7 @@ class SqlParametersFactoryTest {
 
 		@Override
 		public Boolean convert(String source) {
-			return source != null && source.equalsIgnoreCase("T") ? Boolean.TRUE : Boolean.FALSE;
+			return "T".equalsIgnoreCase(source) ? Boolean.TRUE : Boolean.FALSE;
 		}
 	}
 
