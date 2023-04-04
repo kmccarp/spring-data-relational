@@ -130,7 +130,7 @@ class TypedSubtreeVisitorUnitTests {
 		LoggingTypedSubtreeVisitor first = new LoggingTypedSubtreeVisitor("first ");
 		LoggingTypedSubtreeVisitor second = new LoggingTypedSubtreeVisitor("second ");
 		first.enterNested(
-				s -> ((TestSegment) s).name.equals("child 2") ? delegateTo(second) : DelegatingVisitor.Delegation.retain());
+				s -> "child 2".equals(((TestSegment) s).name) ? delegateTo(second) : DelegatingVisitor.Delegation.retain());
 		TestSegment root = new TestSegment("root", new TestSegment("child 1"), new TestSegment("child 2"),
 				new TestSegment("child 3"));
 
@@ -144,7 +144,7 @@ class TypedSubtreeVisitorUnitTests {
 
 	static class TestSegment extends AbstractTestSegment {
 
-		private String name;
+		private final String name;
 
 		TestSegment(String name, Segment... children) {
 
@@ -160,7 +160,7 @@ class TypedSubtreeVisitorUnitTests {
 
 	static class OtherSegment extends AbstractTestSegment {
 
-		private String name;
+		private final String name;
 
 		public OtherSegment(String name, Segment... children) {
 

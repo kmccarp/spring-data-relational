@@ -139,11 +139,11 @@ public abstract class AbstractR2dbcQuery implements RepositoryQuery {
 		}
 
 		if (isCountQuery()) {
-			return (fetchSpec) -> fetchSpec.first().defaultIfEmpty(0L);
+			return fetchSpec -> fetchSpec.first().defaultIfEmpty(0L);
 		}
 
 		if (isExistsQuery()) {
-			return (fetchSpec) -> fetchSpec.first().defaultIfEmpty(false);
+			return fetchSpec -> fetchSpec.first().defaultIfEmpty(false);
 		}
 
 		if (method.isCollectionQuery()) {

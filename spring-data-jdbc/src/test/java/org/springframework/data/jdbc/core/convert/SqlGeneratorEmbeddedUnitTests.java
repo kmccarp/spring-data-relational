@@ -32,6 +32,7 @@ import org.springframework.data.relational.core.mapping.PersistentPropertyPathEx
 import org.springframework.data.relational.core.mapping.RelationalMappingContext;
 import org.springframework.data.relational.core.mapping.RelationalPersistentEntity;
 import org.springframework.data.relational.core.sql.Aliased;
+import org.springframework.data.relational.core.sql.Column;
 import org.springframework.data.relational.core.sql.SqlIdentifier;
 import org.springframework.lang.Nullable;
 
@@ -203,7 +204,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 
 		assertThat(generatedColumn("embeddable.test", DummyEntity.class)) //
 				.extracting( //
-						c -> c.getName(), //
+			Column::getName, //
 						c -> c.getTable().getName(), //
 						c -> getAlias(c.getTable()), //
 						this::getAlias) //
@@ -234,7 +235,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 
 		assertThat(generatedColumn("prefixedEmbeddable.test", DummyEntity.class)) //
 				.extracting( //
-						c -> c.getName(), //
+			Column::getName, //
 						c -> c.getTable().getName(), //
 						c -> getAlias(c.getTable()), //
 						this::getAlias) //
@@ -257,7 +258,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 	public void columnForCascadedEmbeddedProperty() {
 
 		assertThat(generatedColumn("embeddable.embeddable.attr1", DummyEntity.class)) //
-				.extracting(c -> c.getName(), c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias)
+				.extracting(Column::getName, c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias)
 				.containsExactly(SqlIdentifier.unquoted("attr1"), SqlIdentifier.unquoted("dummy_entity"), null,
 						SqlIdentifier.unquoted("attr1"));
 	}
@@ -282,7 +283,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 
 		assertThat(generatedColumn("embedded.other.value", DummyEntity2.class)) //
 				.extracting( //
-						c -> c.getName(), //
+			Column::getName, //
 						c -> c.getTable().getName(), //
 						c -> getAlias(c.getTable()), //
 						this::getAlias) //

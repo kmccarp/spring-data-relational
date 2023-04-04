@@ -27,7 +27,7 @@ import org.springframework.lang.Nullable;
  * @author Tyler Van Gorder
  * @since 2.0
  */
-public class RelationalEntityVersionUtils {
+public final class RelationalEntityVersionUtils {
 
 	private RelationalEntityVersionUtils() {}
 

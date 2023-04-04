@@ -21,7 +21,7 @@ package org.springframework.data.relational.core.sql;
  * @author Mark Paluch
  * @since 2.1
  */
-public class FalseCondition implements Condition {
+public final class FalseCondition implements Condition {
 
 	public static final FalseCondition INSTANCE = new FalseCondition();
 
