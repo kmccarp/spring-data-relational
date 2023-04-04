@@ -54,7 +54,7 @@ import org.springframework.util.Assert;
  * @author Jens Schauder
  * @since 2.0
  */
-public class Criteria implements CriteriaDefinition {
+public final class Criteria implements CriteriaDefinition {
 
 	static final Criteria EMPTY = new Criteria(SqlIdentifier.EMPTY, Comparator.INITIAL, null);
 

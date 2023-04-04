@@ -30,7 +30,7 @@ import org.springframework.data.relational.core.sql.TableLike;
  * @author Mark Paluch
  * @author Jens Schauder
  */
-class NameRenderer {
+final class NameRenderer {
 
 	/**
 	 * Render the {@link TableLike#getName() table name } with considering the

@@ -460,7 +460,7 @@ class StringBasedJdbcQueryUnitTests {
 	}
 
 	private static class DummyEntity {
-		private Long id;
+		private final Long id;
 
 		public DummyEntity(Long id) {
 			this.id = id;

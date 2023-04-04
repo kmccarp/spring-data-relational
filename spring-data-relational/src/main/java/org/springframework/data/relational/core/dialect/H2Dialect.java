@@ -65,7 +65,7 @@ public class H2Dialect extends AbstractDialect {
 		}
 	};
 
-	private final H2ArrayColumns ARRAY_COLUMNS = new H2ArrayColumns();
+	private final H2ArrayColumns arrayColumns = new H2ArrayColumns();
 
 	@Override
 	public LimitClause limit() {
@@ -79,7 +79,7 @@ public class H2Dialect extends AbstractDialect {
 
 	@Override
 	public ArrayColumns getArraySupport() {
-		return ARRAY_COLUMNS;
+		return arrayColumns;
 	}
 
 	static class H2ArrayColumns implements ArrayColumns {
