@@ -35,9 +35,9 @@ class BetweenVisitor extends FilteredSubtreeVisitor {
 	private final RenderContext context;
 	private final RenderTarget target;
 	private final StringBuilder part = new StringBuilder();
-	private boolean renderedTestExpression = false;
-	private boolean renderedPreamble = false;
-	private boolean done = false;
+	private boolean renderedTestExpression;
+	private boolean renderedPreamble;
+	private boolean done;
 	private @Nullable PartRenderer current;
 
 	BetweenVisitor(Between condition, RenderContext context, RenderTarget target) {

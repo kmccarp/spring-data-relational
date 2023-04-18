@@ -50,6 +50,7 @@ import org.springframework.data.relational.core.mapping.RelationalPersistentProp
 import org.springframework.data.relational.core.query.Criteria;
 import org.springframework.data.relational.core.query.Query;
 import org.springframework.data.relational.core.sql.Aliased;
+import org.springframework.data.relational.core.sql.Column;
 import org.springframework.data.relational.core.sql.LockMode;
 import org.springframework.data.relational.core.sql.SqlIdentifier;
 import org.springframework.data.relational.core.sql.Table;
@@ -743,7 +744,7 @@ class SqlGeneratorUnitTests {
 	void simpleColumn() {
 
 		assertThat(generatedColumn("id", DummyEntity.class)) //
-				.extracting(c -> c.getName(), c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias)
+				.extracting(Column::getName, c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias)
 				.containsExactly(SqlIdentifier.quoted("id1"), SqlIdentifier.quoted("DUMMY_ENTITY"), null,
 						SqlIdentifier.quoted("id1"));
 	}
@@ -752,7 +753,7 @@ class SqlGeneratorUnitTests {
 	void columnForIndirectProperty() {
 
 		assertThat(generatedColumn("ref.l1id", DummyEntity.class)) //
-				.extracting(c -> c.getName(), c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias) //
+				.extracting(Column::getName, c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias) //
 				.containsExactly(SqlIdentifier.quoted("X_L1ID"), SqlIdentifier.quoted("REFERENCED_ENTITY"),
 						SqlIdentifier.quoted("ref"), SqlIdentifier.quoted("REF_X_L1ID"));
 	}
@@ -766,7 +767,7 @@ class SqlGeneratorUnitTests {
 	void columnForReferencedEntityWithoutId() {
 
 		assertThat(generatedColumn("child", ParentOfNoIdChild.class)) //
-				.extracting(c -> c.getName(), c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias) //
+				.extracting(Column::getName, c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias) //
 				.containsExactly(SqlIdentifier.quoted("PARENT_OF_NO_ID_CHILD"), SqlIdentifier.quoted("NO_ID_CHILD"),
 						SqlIdentifier.quoted("child"), SqlIdentifier.quoted("CHILD_PARENT_OF_NO_ID_CHILD"));
 	}

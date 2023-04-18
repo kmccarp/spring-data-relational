@@ -70,7 +70,7 @@ class SqlGeneratorFixedNamingStrategyUnitTests {
 		}
 	};
 
-	private RelationalMappingContext context = new JdbcMappingContext();
+	private final RelationalMappingContext context = new JdbcMappingContext();
 
 	@Test // DATAJDBC-107
 	void findOneWithOverriddenFixedTableName() {

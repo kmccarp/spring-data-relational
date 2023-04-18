@@ -32,7 +32,7 @@ import org.springframework.util.Assert;
  * @see Expressions
  * @see Functions
  */
-public class Functions {
+public final class Functions {
 
 	/**
 	 * Creates a new {@code COUNT} function.
