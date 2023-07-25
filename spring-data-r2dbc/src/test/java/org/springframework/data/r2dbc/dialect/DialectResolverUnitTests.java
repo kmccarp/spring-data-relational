@@ -78,7 +78,7 @@ public class DialectResolverUnitTests {
 		@Override
 		public Optional<R2dbcDialect> getDialect(ConnectionFactory connectionFactory) {
 
-			if (connectionFactory.getMetadata().getName().equals("external")) {
+			if ("external".equals(connectionFactory.getMetadata().getName())) {
 				return Optional.of(ExternalDialect.INSTANCE);
 			}
 			return Optional.empty();

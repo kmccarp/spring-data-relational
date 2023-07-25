@@ -39,7 +39,7 @@ import org.springframework.util.Assert;
  * @see Sort
  * @see Pageable
  */
-public class Query {
+public final class Query {
 
 	private static final int NO_LIMIT = -1;
 
