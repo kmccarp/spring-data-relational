@@ -149,7 +149,7 @@ public class RelationalEntityDeleteWriterUnitTests {
 		return actions;
 	}
 
-	private static class SomeEntity {
+	private static final class SomeEntity {
 
 		@Id final Long id;
 		OtherEntity other;
@@ -161,7 +161,7 @@ public class RelationalEntityDeleteWriterUnitTests {
 		}
 	}
 
-	private class OtherEntity {
+	private final class OtherEntity {
 
 		@Id final Long id;
 		YetAnother yetAnother;
@@ -171,7 +171,7 @@ public class RelationalEntityDeleteWriterUnitTests {
 		}
 	}
 
-	private class YetAnother {
+	private final class YetAnother {
 		@Id final Long id;
 
 		private YetAnother(Long id) {
@@ -179,7 +179,7 @@ public class RelationalEntityDeleteWriterUnitTests {
 		}
 	}
 
-	private class SingleEntity {
+	private final class SingleEntity {
 		@Id final Long id;
 		String name;
 

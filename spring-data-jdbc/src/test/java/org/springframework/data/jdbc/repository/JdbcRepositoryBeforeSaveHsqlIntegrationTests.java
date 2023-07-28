@@ -159,16 +159,21 @@ public class JdbcRepositoryBeforeSaveHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof ImmutableEntity)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof ImmutableEntity)) {
+				return false;
+			}
 			final ImmutableEntity other = (ImmutableEntity) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name)) return false;
-			return true;
+			return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		public int hashCode() {

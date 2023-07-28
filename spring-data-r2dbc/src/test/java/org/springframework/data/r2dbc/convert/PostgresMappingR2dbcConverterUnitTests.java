@@ -52,7 +52,7 @@ import org.springframework.r2dbc.core.Parameter;
  */
 class PostgresMappingR2dbcConverterUnitTests {
 
-	private RelationalMappingContext mappingContext = new R2dbcMappingContext();
+	private final RelationalMappingContext mappingContext = new R2dbcMappingContext();
 	private MappingR2dbcConverter converter = new MappingR2dbcConverter(mappingContext);
 
 	@BeforeEach

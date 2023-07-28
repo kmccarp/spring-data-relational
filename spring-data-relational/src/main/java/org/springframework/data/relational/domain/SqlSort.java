@@ -35,7 +35,7 @@ import org.springframework.util.Assert;
  * @author Jens Schauder
  * @since 3.1
  */
-public class SqlSort extends Sort {
+public final class SqlSort extends Sort {
 
 	private static final Predicate<String> predicate = Pattern.compile("^[0-9a-zA-Z_\\.\\(\\)]*$").asPredicate();
 
@@ -197,7 +197,7 @@ public class SqlSort extends Sort {
 	 * @author Christoph Strobl
 	 * @author Oliver Gierke
 	 */
-	public static class SqlOrder extends Order {
+	public static final class SqlOrder extends Order {
 
 		private static final long serialVersionUID = 1L;
 

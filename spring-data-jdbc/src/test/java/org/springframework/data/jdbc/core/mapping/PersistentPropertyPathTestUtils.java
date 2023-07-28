@@ -15,6 +15,7 @@
  */
 package org.springframework.data.jdbc.core.mapping;
 
+import org.springframework.data.mapping.PersistentProperty;
 import org.springframework.data.mapping.PersistentPropertyPath;
 import org.springframework.data.relational.core.mapping.RelationalMappingContext;
 import org.springframework.data.relational.core.mapping.RelationalPersistentProperty;
@@ -31,7 +32,7 @@ public final class PersistentPropertyPathTestUtils {
 	public static PersistentPropertyPath<RelationalPersistentProperty> getPath(RelationalMappingContext context,
 																			   String path, Class<?> baseType) {
 
-		return context.findPersistentPropertyPaths(baseType, p -> p.isEntity()) //
+		return context.findPersistentPropertyPaths(baseType, PersistentProperty::isEntity) //
 				.filter(p -> p.toDotPath().equals(path)) //
 				.stream() //
 				.findFirst() //
