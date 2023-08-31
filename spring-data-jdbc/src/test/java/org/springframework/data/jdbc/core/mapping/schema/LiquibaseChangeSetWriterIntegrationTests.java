@@ -175,7 +175,7 @@ class LiquibaseChangeSetWriterIntegrationTests {
 			LiquibaseChangeSetWriter writer = new LiquibaseChangeSetWriter(contextOf(DifferentPerson.class));
 			writer.writeChangeSet(new FileSystemResource(changelogYml));
 
-			assertThat(tempDir).isDirectoryContaining(it -> it.getName().equalsIgnoreCase("changelog.yml"));
+			assertThat(tempDir).isDirectoryContaining(it -> "changelog.yml".equalsIgnoreCase(it.getName()));
 
 			assertThat(changelogYml).content().contains("author: Spring Data Relational").contains("name: hello");
 		});

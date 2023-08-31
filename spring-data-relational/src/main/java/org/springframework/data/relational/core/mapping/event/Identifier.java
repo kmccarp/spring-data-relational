@@ -59,10 +59,12 @@ public final class Identifier {
 	@Override
 	public boolean equals(@Nullable Object o) {
 
-		if (this == o)
+		if (this == o) {
 			return true;
-		if (o == null || getClass() != o.getClass())
+		}
+		if (o == null || getClass() != o.getClass()) {
 			return false;
+		}
 		Identifier that = (Identifier) o;
 		return value.equals(that.value);
 	}

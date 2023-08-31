@@ -220,20 +220,29 @@ public class JdbcAggregateChangeExecutorContextImmutableUnitTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof DummyEntity)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof DummyEntity)) {
+				return false;
+			}
 			final DummyEntity other = (DummyEntity) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-			if (this.getVersion() != other.getVersion()) return false;
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+				return false;
+			}
+			if (this.getVersion() != other.getVersion()) {
+				return false;
+			}
 			final Object this$content = this.getContent();
 			final Object other$content = other.getContent();
-			if (this$content == null ? other$content != null : !this$content.equals(other$content)) return false;
+			if (this$content == null ? other$content != null : !this$content.equals(other$content)) {
+				return false;
+			}
 			final Object this$list = this.getList();
 			final Object other$list = other.getList();
-			if (this$list == null ? other$list != null : !this$list.equals(other$list)) return false;
-			return true;
+			return !(this$list == null ? other$list != null : !this$list.equals(other$list));
 		}
 
 		public int hashCode() {
@@ -288,13 +297,16 @@ public class JdbcAggregateChangeExecutorContextImmutableUnitTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof Content)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof Content)) {
+				return false;
+			}
 			final Content other = (Content) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-			return true;
+			return !(this$id == null ? other$id != null : !this$id.equals(other$id));
 		}
 
 		public int hashCode() {

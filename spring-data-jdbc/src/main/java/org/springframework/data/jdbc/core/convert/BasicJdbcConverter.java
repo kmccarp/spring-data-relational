@@ -346,7 +346,7 @@ public class BasicJdbcConverter extends BasicRelationalConverter implements Jdbc
 		return (Object[]) source;
 	}
 
-	private class ReadingContext<T> {
+	private final class ReadingContext<T> {
 
 		private final RelationalPersistentEntity<T> entity;
 

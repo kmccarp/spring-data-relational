@@ -526,7 +526,7 @@ class JdbcAggregateChangeExecutionContext {
 		}
 
 		@Override
-		public Object add(@Nullable Object __null, @Nullable Object qualifier, Object value) {
+		public Object add(@Nullable Object null, @Nullable Object qualifier, Object value) {
 			return value;
 		}
 	}

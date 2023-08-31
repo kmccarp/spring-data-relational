@@ -84,7 +84,7 @@ public class SqlServerSelectRenderContext implements SelectRenderContext {
 			StringBuilder builder = new StringBuilder();
 
 			if (usesPagination(select)) {
-				builder.append(" ORDER BY " + SYNTHETIC_ORDER_BY_FIELD);
+				builder.append(" ORDER BY ").append(SYNTHETIC_ORDER_BY_FIELD);
 			}
 
 			builder.append(afterOrderBy.apply(select));

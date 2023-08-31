@@ -140,7 +140,7 @@ public class BasicJdbcPersistentPropertyUnitTests {
 	}
 
 	@SuppressWarnings("unused")
-	private static class DummyEntity {
+	private static final class DummyEntity {
 
 		@Id
 		private final Long id;

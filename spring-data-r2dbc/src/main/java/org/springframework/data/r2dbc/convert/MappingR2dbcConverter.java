@@ -562,9 +562,7 @@ public class MappingR2dbcConverter extends BasicRelationalConverter implements R
 
 		Optional<Class<?>> writeTarget = getConversions().getCustomWriteTarget(valueType);
 
-		return writeTarget.orElseGet(() -> {
-			return Enum.class.isAssignableFrom(valueType) ? String.class : valueType;
-		});
+		return writeTarget.orElseGet(() -> Enum.class.isAssignableFrom(valueType) ? String.class : valueType);
 	}
 
 	@Override
