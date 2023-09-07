@@ -53,7 +53,7 @@ import static org.mockito.Mockito.*;
  */
 public class MappingR2dbcConverterUnitTests {
 
-	private RelationalMappingContext mappingContext = new R2dbcMappingContext();
+	private final RelationalMappingContext mappingContext = new R2dbcMappingContext();
 	private MappingR2dbcConverter converter = new MappingR2dbcConverter(mappingContext);
 
 	@BeforeEach
@@ -263,7 +263,8 @@ public class MappingR2dbcConverterUnitTests {
 	static class Person {
 		@Id
 		String id;
-		String firstname, lastname;
+		String firstname;
+		String lastname;
 		Instant instant;
 		LocalDateTime localDateTime;
 
@@ -396,8 +397,8 @@ public class MappingR2dbcConverterUnitTests {
 			CustomConversionPerson person = new CustomConversionPerson();
 			person.foo = source.get("foo_column", String.class);
 
-			Object nested_entity = source.get("nested_entity");
-			person.entity = nested_entity != null ? new NonMappableEntity() : null;
+			Object nestedEntity = source.get("nested_entity");
+			person.entity = nestedEntity != null ? new NonMappableEntity() : null;
 
 			return person;
 		}

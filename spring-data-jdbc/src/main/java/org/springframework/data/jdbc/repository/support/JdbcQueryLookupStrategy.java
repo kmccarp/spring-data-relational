@@ -310,8 +310,9 @@ abstract class JdbcQueryLookupStrategy implements QueryLookupStrategy {
 
 		RowMapper<?> configuredQueryMapper = queryMappingConfiguration.getRowMapper(returnedObjectType);
 
-		if (configuredQueryMapper != null)
+		if (configuredQueryMapper != null) {
 			return configuredQueryMapper;
+		}
 
 		EntityRowMapper<?> defaultEntityRowMapper = new EntityRowMapper<>( //
 				context.getRequiredPersistentEntity(returnedObjectType), //

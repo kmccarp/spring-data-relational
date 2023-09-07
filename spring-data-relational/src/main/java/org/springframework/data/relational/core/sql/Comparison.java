@@ -27,7 +27,7 @@ import org.springframework.util.Assert;
  * @author Jens Schauder
  * @since 1.1
  */
-public class Comparison extends AbstractSegment implements Condition {
+public final class Comparison extends AbstractSegment implements Condition {
 
 	private final Expression left;
 	private final String comparator;

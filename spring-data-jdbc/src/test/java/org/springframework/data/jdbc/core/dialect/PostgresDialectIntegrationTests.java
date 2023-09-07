@@ -159,28 +159,31 @@ public class PostgresDialectIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof Customer))
+			}
+			if (!(o instanceof Customer)) {
 				return false;
+			}
 			final Customer other = (Customer) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			if (this$name == null ? other$name != null : !this$name.equals(other$name)) {
 				return false;
+			}
 			final Object this$personData = this.getPersonData();
 			final Object other$personData = other.getPersonData();
-			if (this$personData == null ? other$personData != null : !this$personData.equals(other$personData))
+			if (this$personData == null ? other$personData != null : !this$personData.equals(other$personData)) {
 				return false;
+			}
 			final Object this$sessionData = this.getSessionData();
 			final Object other$sessionData = other.getSessionData();
-			if (this$sessionData == null ? other$sessionData != null : !this$sessionData.equals(other$sessionData))
-				return false;
-			return true;
+			return !(this$sessionData == null ? other$sessionData != null : !this$sessionData.equals(other$sessionData));
 		}
 
 		public int hashCode() {

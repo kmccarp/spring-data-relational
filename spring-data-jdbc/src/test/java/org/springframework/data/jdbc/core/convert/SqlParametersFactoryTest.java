@@ -174,7 +174,7 @@ class SqlParametersFactoryTest {
 		}
 	}
 
-	private static class WithValueObjectId {
+	private static final class WithValueObjectId {
 
 		@Id private final IdValue id;
 		String value;
@@ -208,16 +208,16 @@ class SqlParametersFactoryTest {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof IdValue))
+			}
+			if (!(o instanceof IdValue)) {
 				return false;
+			}
 			final IdValue other = (IdValue) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
-				return false;
-			return true;
+			return !(this$id == null ? other$id != null : !this$id.equals(other$id));
 		}
 
 		public int hashCode() {
@@ -251,7 +251,7 @@ class SqlParametersFactoryTest {
 
 		@Override
 		public Boolean convert(String source) {
-			return source != null && source.equalsIgnoreCase("T") ? Boolean.TRUE : Boolean.FALSE;
+			return "T".equalsIgnoreCase(source) ? Boolean.TRUE : Boolean.FALSE;
 		}
 	}
 

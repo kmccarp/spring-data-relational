@@ -105,17 +105,21 @@ public class JdbcRepositoryEmbeddedImmutableIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof DummyEntity)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof DummyEntity)) {
+				return false;
+			}
 			final DummyEntity other = (DummyEntity) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+				return false;
+			}
 			final Object this$prefixedEmbeddable = this.getPrefixedEmbeddable();
 			final Object other$prefixedEmbeddable = other.getPrefixedEmbeddable();
-			if (this$prefixedEmbeddable == null ? other$prefixedEmbeddable != null : !this$prefixedEmbeddable.equals(other$prefixedEmbeddable))
-				return false;
-			return true;
+			return !(this$prefixedEmbeddable == null ? other$prefixedEmbeddable != null : !this$prefixedEmbeddable.equals(other$prefixedEmbeddable));
 		}
 
 		public int hashCode() {
@@ -160,16 +164,21 @@ public class JdbcRepositoryEmbeddedImmutableIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof Embeddable)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof Embeddable)) {
+				return false;
+			}
 			final Embeddable other = (Embeddable) o;
 			final Object this$attr1 = this.getAttr1();
 			final Object other$attr1 = other.getAttr1();
-			if (this$attr1 == null ? other$attr1 != null : !this$attr1.equals(other$attr1)) return false;
+			if (this$attr1 == null ? other$attr1 != null : !this$attr1.equals(other$attr1)) {
+				return false;
+			}
 			final Object this$attr2 = this.getAttr2();
 			final Object other$attr2 = other.getAttr2();
-			if (this$attr2 == null ? other$attr2 != null : !this$attr2.equals(other$attr2)) return false;
-			return true;
+			return !(this$attr2 == null ? other$attr2 != null : !this$attr2.equals(other$attr2));
 		}
 
 		public int hashCode() {

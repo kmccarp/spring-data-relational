@@ -25,7 +25,7 @@ import org.springframework.util.Assert;
  * @author Mark Paluch
  * @since 1.1
  */
-public class AssignValue extends AbstractSegment implements Assignment {
+public final class AssignValue extends AbstractSegment implements Assignment {
 
 	private final Column column;
 	private final Expression value;
