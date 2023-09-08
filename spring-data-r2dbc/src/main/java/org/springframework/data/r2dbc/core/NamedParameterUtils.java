@@ -383,10 +383,12 @@ abstract class NamedParameterUtils {
 
 		@Override
 		public boolean equals(@Nullable Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (!(o instanceof ParameterHolder))
+			}
+			if (!(o instanceof ParameterHolder)) {
 				return false;
+			}
 			ParameterHolder that = (ParameterHolder) o;
 			return this.startIndex == that.startIndex && this.endIndex == that.endIndex
 					&& Objects.equals(this.parameterName, that.parameterName);

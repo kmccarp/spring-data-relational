@@ -337,16 +337,16 @@ public class JdbcRepositoryWithListsIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof Leaf))
+			}
+			if (!(o instanceof Leaf)) {
 				return false;
+			}
 			final Leaf other = (Leaf) o;
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
-			return true;
+			return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		public int hashCode() {

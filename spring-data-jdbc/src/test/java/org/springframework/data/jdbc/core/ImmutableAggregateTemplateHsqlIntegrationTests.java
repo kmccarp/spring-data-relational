@@ -326,28 +326,31 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof LegoSet))
+			}
+			if (!(o instanceof LegoSet)) {
 				return false;
+			}
 			final LegoSet other = (LegoSet) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
+			if (this$name == null ? other$name != null : !this$name.equals(other$name)) {
 				return false;
+			}
 			final Object this$manual = this.getManual();
 			final Object other$manual = other.getManual();
-			if (this$manual == null ? other$manual != null : !this$manual.equals(other$manual))
+			if (this$manual == null ? other$manual != null : !this$manual.equals(other$manual)) {
 				return false;
+			}
 			final Object this$author = this.getAuthor();
 			final Object other$author = other.getAuthor();
-			if (this$author == null ? other$author != null : !this$author.equals(other$author))
-				return false;
-			return true;
+			return !(this$author == null ? other$author != null : !this$author.equals(other$author));
 		}
 
 		public int hashCode() {
@@ -405,20 +408,21 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof Manual))
+			}
+			if (!(o instanceof Manual)) {
 				return false;
+			}
 			final Manual other = (Manual) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
 				return false;
+			}
 			final Object this$content = this.getContent();
 			final Object other$content = other.getContent();
-			if (this$content == null ? other$content != null : !this$content.equals(other$content))
-				return false;
-			return true;
+			return !(this$content == null ? other$content != null : !this$content.equals(other$content));
 		}
 
 		public int hashCode() {
@@ -464,20 +468,21 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof Author))
+			}
+			if (!(o instanceof Author)) {
 				return false;
+			}
 			final Author other = (Author) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
-			return true;
+			return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		public int hashCode() {
@@ -558,20 +563,21 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof NonRoot))
+			}
+			if (!(o instanceof NonRoot)) {
 				return false;
+			}
 			final NonRoot other = (NonRoot) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
-			return true;
+			return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		public int hashCode() {
