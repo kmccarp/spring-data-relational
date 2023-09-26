@@ -49,7 +49,7 @@ public class RelationalMappingContext
 	private boolean forceQuote = true;
 
 	private final ExpressionEvaluator expressionEvaluator = new ExpressionEvaluator(EvaluationContextProvider.DEFAULT);
-	private boolean singleQueryLoadingEnabled = false;
+	private boolean singleQueryLoadingEnabled;
 
 	/**
 	 * Creates a new {@link RelationalMappingContext}.

@@ -201,10 +201,12 @@ class DefaultAggregatePath implements AggregatePath {
 	@Override
 	public boolean equals(Object o) {
 
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 		DefaultAggregatePath that = (DefaultAggregatePath) o;
 		return Objects.equals(context, that.context) && Objects.equals(rootType, that.rootType)
 				&& Objects.equals(path, that.path);

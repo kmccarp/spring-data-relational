@@ -165,10 +165,10 @@ class BasicRelationalConverterUnitTests {
 	}
 
 	enum MyEnum {
-		ON, OFF;
+		ON, OFF
 	}
 
 	enum MySimpleEnum {
-		ON, OFF;
+		ON, OFF
 	}
 }

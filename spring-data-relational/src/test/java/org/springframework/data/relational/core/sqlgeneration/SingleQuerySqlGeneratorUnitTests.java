@@ -123,8 +123,8 @@ class SingleQuerySqlGeneratorUnitTests {
 
 	}
 
-	@Nested
-	class AggregateWithSingleReference extends AbstractTestFixture {
+    @Nested
+    final class AggregateWithSingleReference extends AbstractTestFixture {
 
 		private AggregateWithSingleReference() {
 			super(SingleReferenceAggregate.class);

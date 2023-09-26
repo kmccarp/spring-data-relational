@@ -144,8 +144,8 @@ public class BasicJdbcPersistentPropertyUnitTests {
 		ALPHA
 	}
 
-	@SuppressWarnings("unused")
-	private static class DummyEntity {
+    @SuppressWarnings("unused")
+    private static final class DummyEntity {
 
 		@Id private final Long id;
 		private final SomeEnum someEnum;

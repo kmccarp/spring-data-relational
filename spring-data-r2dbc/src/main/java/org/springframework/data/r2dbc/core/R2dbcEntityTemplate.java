@@ -807,12 +807,12 @@ public class R2dbcEntityTemplate implements R2dbcEntityOperations, BeanFactoryAw
 		return executeSpec.map(rowMapper);
 	}
 
-	/**
-	 * {@link RowsFetchSpec} adapter emitting values from {@link Optional} if they exist.
-	 *
-	 * @param <T>
-	 */
-	private static class UnwrapOptionalFetchSpecAdapter<T> implements RowsFetchSpec<T> {
+    /**
+     * {@link RowsFetchSpec} adapter emitting values from {@link Optional} if they exist.
+     *
+     * @param <T>
+     */
+    private static final class UnwrapOptionalFetchSpecAdapter<T> implements RowsFetchSpec<T> {
 
 		private final RowsFetchSpec<Optional<T>> delegate;
 
@@ -836,13 +836,13 @@ public class R2dbcEntityTemplate implements R2dbcEntityOperations, BeanFactoryAw
 		}
 	}
 
-	/**
-	 * {@link RowsFetchSpec} adapter applying {@link #maybeCallAfterConvert(Object, SqlIdentifier)} to each emitted
-	 * object.
-	 *
-	 * @param <T>
-	 */
-	private class EntityCallbackAdapter<T> implements RowsFetchSpec<T> {
+    /**
+     * {@link RowsFetchSpec} adapter applying {@link #maybeCallAfterConvert(Object, SqlIdentifier)} to each emitted
+     * object.
+     *
+     * @param <T>
+     */
+    private final class EntityCallbackAdapter<T> implements RowsFetchSpec<T> {
 
 		private final RowsFetchSpec<T> delegate;
 		private final SqlIdentifier tableName;

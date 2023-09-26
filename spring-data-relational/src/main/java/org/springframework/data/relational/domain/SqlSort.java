@@ -35,7 +35,7 @@ import org.springframework.util.Assert;
  * @author Jens Schauder
  * @since 3.1
  */
-public class SqlSort extends Sort {
+public final class SqlSort extends Sort {
 
 	private static final Predicate<String> predicate = Pattern.compile("^[0-9a-zA-Z_\\.\\(\\)]*$").asPredicate();
 
@@ -189,15 +189,15 @@ public class SqlSort extends Sort {
 		return new SqlSort(orders, direction, Collections.emptyList());
 	}
 
-	/**
-	 * Custom {@link Order} that keeps a flag to indicate unsafe property handling, i.e. the String provided is not
-	 * necessarily a property but can be an arbitrary expression piped into the query execution. We also keep an
-	 * additional {@code ignoreCase} flag around as the constructor of the superclass is private currently.
-	 *
-	 * @author Christoph Strobl
-	 * @author Oliver Gierke
-	 */
-	public static class SqlOrder extends Order {
+    /**
+     * Custom {@link Order} that keeps a flag to indicate unsafe property handling, i.e. the String provided is not
+     * necessarily a property but can be an arbitrary expression piped into the query execution. We also keep an
+     * additional {@code ignoreCase} flag around as the constructor of the superclass is private currently.
+     *
+     * @author Christoph Strobl
+     * @author Oliver Gierke
+     */
+    public static final class SqlOrder extends Order {
 
 		private static final long serialVersionUID = 1L;
 

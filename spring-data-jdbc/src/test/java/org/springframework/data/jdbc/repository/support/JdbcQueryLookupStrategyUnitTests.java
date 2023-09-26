@@ -63,14 +63,14 @@ import org.springframework.util.ReflectionUtils;
  */
 class JdbcQueryLookupStrategyUnitTests {
 
-	private ApplicationEventPublisher publisher = mock(ApplicationEventPublisher.class);
-	private EntityCallbacks callbacks = mock(EntityCallbacks.class);
-	private RelationalMappingContext mappingContext = mock(RelationalMappingContext.class, RETURNS_DEEP_STUBS);
-	private JdbcConverter converter = mock(JdbcConverter.class);
-	private ProjectionFactory projectionFactory = mock(ProjectionFactory.class);
+    private final ApplicationEventPublisher publisher = mock(ApplicationEventPublisher.class);
+    private final EntityCallbacks callbacks = mock(EntityCallbacks.class);
+    private final RelationalMappingContext mappingContext = mock(RelationalMappingContext.class, RETURNS_DEEP_STUBS);
+    private final JdbcConverter converter = mock(JdbcConverter.class);
+    private final ProjectionFactory projectionFactory = mock(ProjectionFactory.class);
 	private RepositoryMetadata metadata;
-	private NamedQueries namedQueries = mock(NamedQueries.class);
-	private NamedParameterJdbcOperations operations = mock(NamedParameterJdbcOperations.class);
+    private final NamedQueries namedQueries = mock(NamedQueries.class);
+    private final NamedParameterJdbcOperations operations = mock(NamedParameterJdbcOperations.class);
 	QueryMethodEvaluationContextProvider evaluationContextProvider = mock(QueryMethodEvaluationContextProvider.class);
 
 	@BeforeEach

@@ -36,7 +36,7 @@ import org.springframework.util.StringUtils;
  * @author Mark Paluch
  * @since 3.2
  */
-class ObjectPath {
+final class ObjectPath {
 
 	static final ObjectPath ROOT = new ObjectPath();
 
