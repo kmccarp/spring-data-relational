@@ -35,7 +35,7 @@ import org.springframework.util.Assert;
 class DefaultUpdateBuilder implements UpdateBuilder, UpdateWhere, UpdateWhereAndOr, UpdateAssign {
 
 	private @Nullable Table table;
-	private List<Assignment> assignments = new ArrayList<>();
+    private final List<Assignment> assignments = new ArrayList<>();
 	private @Nullable Condition where;
 
 	@Override

@@ -159,8 +159,8 @@ public class BasicJdbcConverterUnitTests {
 		softly.assertThat(converter.getColumnType(property)).describedAs(propertyName).isEqualTo(expected);
 	}
 
-	@SuppressWarnings("unused")
-	private static class DummyEntity {
+    @SuppressWarnings("unused")
+    private static final class DummyEntity {
 
 		@Id private final Long id;
 		private final SomeEnum someEnum;

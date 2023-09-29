@@ -77,11 +77,12 @@ class FunctionCollector<T> implements Collector<DataAccessStrategy, FunctionColl
 
 		return roe -> {
 
-			if (roe.hasResult)
-				return roe.result;
-			else
-				throw new CombinedDataAccessException("Failed to perform data access with all available strategies",
-						Collections.unmodifiableList(roe.exceptions));
+            if (roe.hasResult) {
+                return roe.result;
+            } else {
+                throw new CombinedDataAccessException("Failed to perform data access with all available strategies",
+                        Collections.unmodifiableList(roe.exceptions));
+            }
 		};
 	}
 
@@ -98,7 +99,7 @@ class FunctionCollector<T> implements Collector<DataAccessStrategy, FunctionColl
 
 		private T result;
 		private final List<Exception> exceptions = new LinkedList<>();
-		private boolean hasResult = false;
+		private boolean hasResult;
 
 		private boolean hasResult() {
 			return hasResult;

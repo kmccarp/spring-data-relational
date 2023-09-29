@@ -50,9 +50,9 @@ class SchemaDiffUnitTests {
 		table2.columns().add(newColumn);
 
 		// This should be deleted
-		Table delete_me = new Table(null, "delete_me");
-		delete_me.columns().add(newColumn);
-		existingTables.tables().add(delete_me);
+		Table deleteMe = new Table(null, "delete_me");
+		deleteMe.columns().add(newColumn);
+		existingTables.tables().add(deleteMe);
 
 		SchemaDiff diff = SchemaDiff.diff(mappedEntities, existingTables, Collator.getInstance(Locale.ROOT)::compare);
 

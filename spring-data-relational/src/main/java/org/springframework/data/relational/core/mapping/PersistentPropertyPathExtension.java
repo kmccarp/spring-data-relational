@@ -460,10 +460,12 @@ public class PersistentPropertyPathExtension {
 	@Override
 	public boolean equals(@Nullable Object o) {
 
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 		PersistentPropertyPathExtension that = (PersistentPropertyPathExtension) o;
 		return entity.equals(that.entity) && Objects.equals(path, that.path);
 	}

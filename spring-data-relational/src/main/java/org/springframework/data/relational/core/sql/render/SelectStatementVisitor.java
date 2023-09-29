@@ -36,16 +36,16 @@ class SelectStatementVisitor extends DelegatingVisitor implements PartRenderer {
 	private final RenderContext context;
 	private final SelectRenderContext selectRenderContext;
 
-	private StringBuilder builder = new StringBuilder();
-	private StringBuilder selectList = new StringBuilder();
-	private StringBuilder from = new StringBuilder();
-	private StringBuilder join = new StringBuilder();
-	private StringBuilder where = new StringBuilder();
+    private final StringBuilder builder = new StringBuilder();
+    private final StringBuilder selectList = new StringBuilder();
+    private final StringBuilder from = new StringBuilder();
+    private final StringBuilder join = new StringBuilder();
+    private final StringBuilder where = new StringBuilder();
 
-	private SelectListVisitor selectListVisitor;
-	private OrderByClauseVisitor orderByClauseVisitor;
-	private FromClauseVisitor fromClauseVisitor;
-	private WhereClauseVisitor whereClauseVisitor;
+    private final SelectListVisitor selectListVisitor;
+    private final OrderByClauseVisitor orderByClauseVisitor;
+    private final FromClauseVisitor fromClauseVisitor;
+    private final WhereClauseVisitor whereClauseVisitor;
 
 	SelectStatementVisitor(RenderContext context) {
 

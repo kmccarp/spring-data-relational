@@ -32,7 +32,7 @@ import org.springframework.util.ConcurrentReferenceHashMap;
  */
 public class SqlGeneratorSource {
 
-	private final Map<Class<?>, SqlGenerator> CACHE = new ConcurrentReferenceHashMap<>();
+	private static final Map<Class<?>, SqlGenerator> CACHE = new ConcurrentReferenceHashMap<>();
 	private final RelationalMappingContext context;
 	private final JdbcConverter converter;
 	private final Dialect dialect;

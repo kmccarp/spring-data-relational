@@ -61,7 +61,7 @@ class AggregatePathTableUtils {
 
 		@Override
 		public BiConsumer<StringBuilder, String> accumulator() {
-			return ((stringBuilder, s) -> stringBuilder.insert(0, s));
+			return (stringBuilder, s) -> stringBuilder.insert(0, s);
 		}
 
 		@Override

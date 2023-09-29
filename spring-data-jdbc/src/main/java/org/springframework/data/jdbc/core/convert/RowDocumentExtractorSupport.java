@@ -375,7 +375,7 @@ abstract class RowDocumentExtractorSupport {
 		private final AggregateContext<RS> aggregateContext;
 
 		private Object key;
-		private boolean hasResult = false;
+		private boolean hasResult;
 
 		private final TabularSink<RS> componentReader;
 		private final CollectionContainer container;

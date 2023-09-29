@@ -29,7 +29,7 @@ import org.springframework.data.spel.ExpressionDependencies;
  * @author Mark Paluch
  * @since 1.1
  */
-class ExpressionQuery {
+final class ExpressionQuery {
 
 	private static final String SYNTHETIC_PARAMETER_TEMPLATE = "__synthetic_%d__";
 
@@ -79,12 +79,12 @@ class ExpressionQuery {
 		return query;
 	}
 
-	/**
-	 * A SpEL parameter binding.
-	 *
-	 * @author Mark Paluch
-	 */
-	static class ParameterBinding {
+    /**
+     * A SpEL parameter binding.
+     *
+     * @author Mark Paluch
+     */
+    static final class ParameterBinding {
 
 		private final String parameterName;
 		private final String expression;

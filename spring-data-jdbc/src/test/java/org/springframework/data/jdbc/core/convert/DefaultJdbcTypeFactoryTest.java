@@ -54,7 +54,7 @@ class DefaultJdbcTypeFactoryTest {
 			return callback.doInConnection(connection);
 		});
 
-		UUID uuids[] = new UUID[] { UUID.randomUUID(), UUID.randomUUID() };
+		UUID[] uuids = new UUID[] { UUID.randomUUID(), UUID.randomUUID() };
 		when(connection.createArrayOf("uuid", uuids)).thenReturn(mock(Array.class));
 		Array array = sut.createArray(uuids);
 

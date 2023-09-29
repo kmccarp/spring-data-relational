@@ -38,24 +38,24 @@ import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
 public class MsSqlDataSourceConfiguration extends DataSourceConfiguration {
 
 	public static final String MS_SQL_SERVER_VERSION = "mcr.microsoft.com/mssql/server:2022-CU5-ubuntu-20.04";
-	private static MSSQLServerContainer<?> MSSQL_CONTAINER;
+	private static MSSQLServerContainer<?> mssqlContainer;
 
 	@Override
 	protected DataSource createDataSource() {
 
-		if (MSSQL_CONTAINER == null) {
+		if (mssqlContainer == null) {
 
 			MSSQLServerContainer<?> container = new MSSQLServerContainer<>(MS_SQL_SERVER_VERSION) //
 					.withReuse(true);
 			container.start();
 
-			MSSQL_CONTAINER = container;
+			mssqlContainer = container;
 		}
 
 		SQLServerDataSource sqlServerDataSource = new SQLServerDataSource();
-		sqlServerDataSource.setURL(MSSQL_CONTAINER.getJdbcUrl());
-		sqlServerDataSource.setUser(MSSQL_CONTAINER.getUsername());
-		sqlServerDataSource.setPassword(MSSQL_CONTAINER.getPassword());
+		sqlServerDataSource.setURL(mssqlContainer.getJdbcUrl());
+		sqlServerDataSource.setUser(mssqlContainer.getUsername());
+		sqlServerDataSource.setPassword(mssqlContainer.getPassword());
 
 		return sqlServerDataSource;
 	}
