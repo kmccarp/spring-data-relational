@@ -117,7 +117,7 @@ public abstract class AbstractJdbcQuery implements RepositoryQuery {
 			int updatedCount = operations.update(query, parameters);
 			Class<?> returnedObjectType = queryMethod.getReturnedObjectType();
 
-			return (returnedObjectType == boolean.class || returnedObjectType == Boolean.class) //
+			return returnedObjectType == boolean.class || returnedObjectType == Boolean.class //
 					? updatedCount != 0 //
 					: updatedCount;
 		};

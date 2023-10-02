@@ -380,10 +380,10 @@ public class Column extends AbstractSegment implements Expression, Named {
 		return Objects.hash(super.hashCode(), name, table);
 	}
 
-	/**
-	 * {@link Aliased} {@link Column} implementation.
-	 */
-	static class AliasedColumn extends Column implements Aliased {
+    /**
+     * {@link Aliased} {@link Column} implementation.
+     */
+    static final class AliasedColumn extends Column implements Aliased {
 
 		private final SqlIdentifier alias;
 

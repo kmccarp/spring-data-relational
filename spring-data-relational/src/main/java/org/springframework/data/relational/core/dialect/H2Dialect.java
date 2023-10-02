@@ -65,7 +65,7 @@ public class H2Dialect extends AbstractDialect {
 		}
 	};
 
-	private final H2ArrayColumns ARRAY_COLUMNS = new H2ArrayColumns();
+	private static final H2ArrayColumns ARRAY_COLUMNS = new H2ArrayColumns();
 
 	@Override
 	public LimitClause limit() {

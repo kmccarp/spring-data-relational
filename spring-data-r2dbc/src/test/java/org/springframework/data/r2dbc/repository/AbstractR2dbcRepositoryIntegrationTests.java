@@ -241,9 +241,7 @@ public abstract class AbstractR2dbcRepositoryIntegrationTests extends R2dbcInteg
 	@Test // GH-335
 	void shouldFindByPageable() {
 
-		Flux<LegoSet> sets = Flux.fromStream(IntStream.range(0, 100).mapToObj(value -> {
-			return new LegoSet(null, "Set " + value, value);
-		}));
+		Flux<LegoSet> sets = Flux.fromStream(IntStream.range(0, 100).mapToObj(value -> new LegoSet(null, "Set " + value, value)));
 
 		repository.saveAll(sets) //
 				.as(StepVerifier::create) //
@@ -407,9 +405,7 @@ public abstract class AbstractR2dbcRepositoryIntegrationTests extends R2dbcInteg
 	}
 
 	private Condition<? super Object> numberOf(int expected) {
-		return new Condition<>(it -> {
-			return it instanceof Number && ((Number) it).intValue() == expected;
-		}, "Number  %d", expected);
+		return new Condition<>(it -> it instanceof Number && ((Number) it).intValue() == expected, "Number  %d", expected);
 	}
 
 	@NoRepositoryBean
@@ -546,16 +542,21 @@ public abstract class AbstractR2dbcRepositoryIntegrationTests extends R2dbcInteg
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof LegoDto)) return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof LegoDto)) {
+                return false;
+            }
 			final LegoDto other = (LegoDto) o;
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name)) return false;
+            if (this$name == null ? other$name != null : !this$name.equals(other$name)) {
+                return false;
+            }
 			final Object this$unknown = this.getUnknown();
 			final Object other$unknown = other.getUnknown();
-			if (this$unknown == null ? other$unknown != null : !this$unknown.equals(other$unknown)) return false;
-			return true;
+            return !(this$unknown == null ? other$unknown != null : !this$unknown.equals(other$unknown));
 		}
 
 		public int hashCode() {

@@ -43,12 +43,12 @@ public class OracleDataSourceConfiguration extends DataSourceConfiguration {
 
 	private static final Log LOG = LogFactory.getLog(OracleDataSourceConfiguration.class);
 
-	private static OracleContainer ORACLE_CONTAINER;
+	private static OracleContainer oracleContainer;
 
 	@Override
 	protected DataSource createDataSource() {
 
-		if (ORACLE_CONTAINER == null) {
+		if (oracleContainer == null) {
 
 			LOG.info("Oracle starting...");
 			DockerImageName dockerImageName = DockerImageName.parse("gvenzl/oracle-free:23-slim")
@@ -59,21 +59,21 @@ public class OracleDataSourceConfiguration extends DataSourceConfiguration {
 			container.start();
 			LOG.info("Oracle started");
 
-			ORACLE_CONTAINER = container;
+			oracleContainer = container;
 		}
 
 		initDb();
 
-		return new DriverManagerDataSource(ORACLE_CONTAINER.getJdbcUrl(), ORACLE_CONTAINER.getUsername(),
-				ORACLE_CONTAINER.getPassword());
+		return new DriverManagerDataSource(oracleContainer.getJdbcUrl(), oracleContainer.getUsername(),
+				oracleContainer.getPassword());
 	}
 
 	private void initDb() {
 
-		final DriverManagerDataSource dataSource = new DriverManagerDataSource(ORACLE_CONTAINER.getJdbcUrl(), "SYSTEM",
-				ORACLE_CONTAINER.getPassword());
+		final DriverManagerDataSource dataSource = new DriverManagerDataSource(oracleContainer.getJdbcUrl(), "SYSTEM",
+				oracleContainer.getPassword());
 		final JdbcTemplate jdbc = new JdbcTemplate(dataSource);
-		jdbc.execute("GRANT ALL PRIVILEGES TO " + ORACLE_CONTAINER.getUsername());
+		jdbc.execute("GRANT ALL PRIVILEGES TO " + oracleContainer.getUsername());
 	}
 
 	@Override

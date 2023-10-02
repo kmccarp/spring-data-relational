@@ -38,10 +38,10 @@ import org.springframework.r2dbc.core.binding.BindTarget;
  */
 class StatementMapperUnitTests {
 
-	private ReactiveDataAccessStrategy strategy = new DefaultReactiveDataAccessStrategy(PostgresDialect.INSTANCE);
-	private StatementMapper mapper = strategy.getStatementMapper();
+    private final ReactiveDataAccessStrategy strategy = new DefaultReactiveDataAccessStrategy(PostgresDialect.INSTANCE);
+    private final StatementMapper mapper = strategy.getStatementMapper();
 
-	private BindTarget bindTarget = mock(BindTarget.class);
+    private final BindTarget bindTarget = mock(BindTarget.class);
 
 	@Test // gh-64
 	void shouldMapUpdate() {

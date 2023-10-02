@@ -137,7 +137,7 @@ public class JdbcRepositoryConcurrencyIntegrationTests {
 		// latch for main thread to wait on until all threads are done.
 		CountDownLatch doneLatch = new CountDownLatch(concurrencyEntities.size());
 
-		UnaryOperator<DummyEntity> action = e -> repository.save(e);
+		UnaryOperator<DummyEntity> action = repository::save;
 
 		concurrencyEntities.forEach(e -> executeInParallel(startLatch, doneLatch, action, e));
 

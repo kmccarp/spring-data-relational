@@ -176,7 +176,6 @@ class SqlAssertUnitTests {
 			assertThatThrownBy(() -> sqlAssert.hasExactlyColumns(rn(col("x")))) //
 					.hasMessageContaining("row_number AS x") //
 					.hasMessageContaining("row_number() OVER (PARTITION BY x)");
-			;
 		}
 
 		@Test // GH-1446
@@ -263,8 +262,7 @@ class SqlAssertUnitTests {
 		void hasJoinFailure() {
 			SqlAssert sqlAssert = SqlAssert.assertThatParsed("select c from t where x = y");
 
-			assertThatThrownBy(() -> sqlAssert //
-					.hasJoin()).hasMessageContaining("to contain a join but it doesn't");
+			assertThatThrownBy(sqlAssert::hasJoin).hasMessageContaining("to contain a join but it doesn't");
 		}
 
 		@Test // GH-1446

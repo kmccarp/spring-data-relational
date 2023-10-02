@@ -73,7 +73,7 @@ class SimpleJdbcRepositoryEventsUnitTests {
 
 	private static final long generatedId = 4711L;
 
-	private CollectingEventPublisher publisher = new CollectingEventPublisher();
+    private final CollectingEventPublisher publisher = new CollectingEventPublisher();
 
 	private DummyEntityRepository repository;
 	private DefaultDataAccessStrategy dataAccessStrategy;
@@ -311,13 +311,16 @@ class SimpleJdbcRepositoryEventsUnitTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof DummyEntity)) return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof DummyEntity)) {
+                return false;
+            }
 			final DummyEntity other = (DummyEntity) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-			return true;
+            return !(this$id == null ? other$id != null : !this$id.equals(other$id));
 		}
 
 		public int hashCode() {

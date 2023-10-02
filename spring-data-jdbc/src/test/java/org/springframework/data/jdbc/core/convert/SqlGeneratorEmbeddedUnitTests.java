@@ -202,7 +202,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 
 		assertThat(generatedColumn("embeddable.test", DummyEntity.class)) //
 				.extracting( //
-						c -> c.getName(), //
+						org.springframework.data.relational.core.sql.Column::getName, //
 						c -> c.getTable().getName(), //
 						c -> getAlias(c.getTable()), //
 						this::getAlias) //
@@ -233,7 +233,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 
 		assertThat(generatedColumn("prefixedEmbeddable.test", DummyEntity.class)) //
 				.extracting( //
-						c -> c.getName(), //
+						org.springframework.data.relational.core.sql.Column::getName, //
 						c -> c.getTable().getName(), //
 						c -> getAlias(c.getTable()), //
 						this::getAlias) //
@@ -256,7 +256,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 	public void columnForCascadedEmbeddedProperty() {
 
 		assertThat(generatedColumn("embeddable.embeddable.attr1", DummyEntity.class)) //
-				.extracting(c -> c.getName(), c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias)
+				.extracting(org.springframework.data.relational.core.sql.Column::getName, c -> c.getTable().getName(), c -> getAlias(c.getTable()), this::getAlias)
 				.containsExactly(SqlIdentifier.unquoted("attr1"), SqlIdentifier.unquoted("dummy_entity"), null,
 						SqlIdentifier.unquoted("attr1"));
 	}
@@ -281,7 +281,7 @@ public class SqlGeneratorEmbeddedUnitTests {
 
 		assertThat(generatedColumn("embedded.other.value", DummyEntity2.class)) //
 				.extracting( //
-						c -> c.getName(), //
+						org.springframework.data.relational.core.sql.Column::getName, //
 						c -> c.getTable().getName(), //
 						c -> getAlias(c.getTable()), //
 						this::getAlias) //

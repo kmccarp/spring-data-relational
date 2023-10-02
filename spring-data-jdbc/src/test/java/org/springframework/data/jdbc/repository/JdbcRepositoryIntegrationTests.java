@@ -1472,28 +1472,31 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof Root))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof Root)) {
+                return false;
+            }
 			final Root other = (Root) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
-				return false;
+            if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+                return false;
+            }
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
+            if (this$name == null ? other$name != null : !this$name.equals(other$name)) {
+                return false;
+            }
 			final Object this$intermediate = this.getIntermediate();
 			final Object other$intermediate = other.getIntermediate();
-			if (this$intermediate == null ? other$intermediate != null : !this$intermediate.equals(other$intermediate))
-				return false;
+            if (this$intermediate == null ? other$intermediate != null : !this$intermediate.equals(other$intermediate)) {
+                return false;
+            }
 			final Object this$intermediates = this.getIntermediates();
 			final Object other$intermediates = other.getIntermediates();
-			if (this$intermediates == null ? other$intermediates != null : !this$intermediates.equals(other$intermediates))
-				return false;
-			return true;
+            return !(this$intermediates == null ? other$intermediates != null : !this$intermediates.equals(other$intermediates));
 		}
 
 		public int hashCode() {
@@ -1578,28 +1581,31 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof Intermediate))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof Intermediate)) {
+                return false;
+            }
 			final Intermediate other = (Intermediate) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
-				return false;
+            if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+                return false;
+            }
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
+            if (this$name == null ? other$name != null : !this$name.equals(other$name)) {
+                return false;
+            }
 			final Object this$leaf = this.getLeaf();
 			final Object other$leaf = other.getLeaf();
-			if (this$leaf == null ? other$leaf != null : !this$leaf.equals(other$leaf))
-				return false;
+            if (this$leaf == null ? other$leaf != null : !this$leaf.equals(other$leaf)) {
+                return false;
+            }
 			final Object this$leaves = this.getLeaves();
 			final Object other$leaves = other.getLeaves();
-			if (this$leaves == null ? other$leaves != null : !this$leaves.equals(other$leaves))
-				return false;
-			return true;
+            return !(this$leaves == null ? other$leaves != null : !this$leaves.equals(other$leaves));
 		}
 
 		public int hashCode() {
@@ -1641,20 +1647,21 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof Leaf))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof Leaf)) {
+                return false;
+            }
 			final Leaf other = (Leaf) o;
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id))
-				return false;
+            if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+                return false;
+            }
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
-			return true;
+            return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		public int hashCode() {
@@ -1777,8 +1784,12 @@ public class JdbcRepositoryIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o) return true;
-			if (o == null || getClass() != o.getClass()) return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			DummyEntity that = (DummyEntity) o;
 			return flag == that.flag && Objects.equals(name, that.name) && Objects.equals(pointInTime, that.pointInTime) && Objects.equals(offsetDateTime, that.offsetDateTime) && Objects.equals(idProp, that.idProp) && Objects.equals(ref, that.ref) && direction == that.direction;
 		}
@@ -1809,16 +1820,16 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof DtoProjection))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof DtoProjection)) {
+                return false;
+            }
 			final DtoProjection other = (DtoProjection) o;
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name))
-				return false;
-			return true;
+            return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		public int hashCode() {
