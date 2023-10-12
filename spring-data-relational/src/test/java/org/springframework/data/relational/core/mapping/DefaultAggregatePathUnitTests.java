@@ -39,7 +39,7 @@ import org.springframework.data.relational.core.sql.SqlIdentifier;
 class DefaultAggregatePathUnitTests {
 	RelationalMappingContext context = new RelationalMappingContext();
 
-	private RelationalPersistentEntity<?> entity = context.getRequiredPersistentEntity(DummyEntity.class);
+    private final RelationalPersistentEntity<?> entity = context.getRequiredPersistentEntity(DummyEntity.class);
 
 	@Test // GH-1525
 	void isNotRootForNonRootPath() {

@@ -35,7 +35,7 @@ import org.springframework.data.mapping.model.SimpleTypeHolder;
  *
  * @author Mark Paluch
  */
-public class R2dbcSimpleTypeHolder extends SimpleTypeHolder {
+public final class R2dbcSimpleTypeHolder extends SimpleTypeHolder {
 
 	/**
 	 * Set of R2DBC simple types.

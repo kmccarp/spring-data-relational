@@ -163,7 +163,7 @@ abstract class R2dbcConverters {
 
 				Object object = source.get(0);
 
-				return (object != null ? NumberUtils.convertNumberToTargetClass((Number) object, this.targetType) : null);
+				return object != null ? NumberUtils.convertNumberToTargetClass((Number) object, this.targetType) : null;
 			}
 		}
 	}

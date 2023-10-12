@@ -497,7 +497,7 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 	@EnabledOnFeature({ SUPPORTS_QUOTED_IDS, SUPPORTS_GENERATED_IDS_IN_REFERENCED_ENTITIES })
 	void updateReferencedEntityFromNull() {
 
-		legoSet.manual = (null);
+		legoSet.manual = null;
 		template.save(legoSet);
 
 		Manual manual = new Manual();
@@ -1522,10 +1522,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdListChain0 that = (NoIdListChain0) o;
 			return Objects.equals(zeroValue, that.zeroValue);
 		}
@@ -1542,10 +1544,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdListChain1 that = (NoIdListChain1) o;
 			return Objects.equals(oneValue, that.oneValue) && Objects.equals(chain0, that.chain0);
 		}
@@ -1562,10 +1566,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdListChain2 that = (NoIdListChain2) o;
 			return Objects.equals(twoValue, that.twoValue) && Objects.equals(chain1, that.chain1);
 		}
@@ -1582,10 +1588,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdListChain3 that = (NoIdListChain3) o;
 			return Objects.equals(threeValue, that.threeValue) && Objects.equals(chain2, that.chain2);
 		}
@@ -1603,10 +1611,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdListChain4 that = (NoIdListChain4) o;
 			return Objects.equals(four, that.four) && Objects.equals(fourValue, that.fourValue)
 					&& Objects.equals(chain3, that.chain3);
@@ -1626,10 +1636,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdMapChain0 that = (NoIdMapChain0) o;
 			return Objects.equals(zeroValue, that.zeroValue);
 		}
@@ -1646,10 +1658,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdMapChain1 that = (NoIdMapChain1) o;
 			return Objects.equals(oneValue, that.oneValue) && Objects.equals(chain0, that.chain0);
 		}
@@ -1666,10 +1680,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdMapChain2 that = (NoIdMapChain2) o;
 			return Objects.equals(twoValue, that.twoValue) && Objects.equals(chain1, that.chain1);
 		}
@@ -1686,10 +1702,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdMapChain3 that = (NoIdMapChain3) o;
 			return Objects.equals(threeValue, that.threeValue) && Objects.equals(chain2, that.chain2);
 		}
@@ -1707,10 +1725,12 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
-				return true;
-			if (o == null || getClass() != o.getClass())
-				return false;
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
 			NoIdMapChain4 that = (NoIdMapChain4) o;
 			return Objects.equals(four, that.four) && Objects.equals(fourValue, that.fourValue)
 					&& Objects.equals(chain3, that.chain3);
@@ -1729,7 +1749,7 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 		@ReadOnlyProperty String readOnly;
 	}
 
-	static abstract class VersionedAggregate {
+	abstract static class VersionedAggregate {
 
 		@Id private Long id;
 
@@ -1774,7 +1794,7 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 		@Id private final Long id;
 		@Version private final Long version;
 
-		private final static List<ConstructorInvocation> constructorInvocations = new ArrayList<>();
+		private static final List<ConstructorInvocation> constructorInvocations = new ArrayList<>();
 
 		public static void clearConstructorInvocationData() {
 			constructorInvocations.clear();
@@ -1796,14 +1816,17 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof final AggregateWithImmutableVersion other))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof final AggregateWithImmutableVersion other)) {
+                return false;
+            }
 			final Object this$id = this.id;
 			final Object other$id = other.id;
-			if (!Objects.equals(this$id, other$id))
-				return false;
+            if (!Objects.equals(this$id, other$id)) {
+                return false;
+            }
 			final Object this$version = this.getVersion();
 			final Object other$version = other.getVersion();
 			return Objects.equals(this$version, other$version);
@@ -1857,14 +1880,17 @@ abstract class AbstractJdbcAggregateTemplateIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof final ConstructorInvocation other))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof final ConstructorInvocation other)) {
+                return false;
+            }
 			final Object this$id = this.id;
 			final Object other$id = other.id;
-			if (!Objects.equals(this$id, other$id))
-				return false;
+            if (!Objects.equals(this$id, other$id)) {
+                return false;
+            }
 			final Object this$version = this.getVersion();
 			final Object other$version = other.getVersion();
 			return Objects.equals(this$version, other$version);

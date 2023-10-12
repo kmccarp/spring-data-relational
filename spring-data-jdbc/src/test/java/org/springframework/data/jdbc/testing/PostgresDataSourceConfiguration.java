@@ -35,7 +35,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 @ConditionalOnDatabase(DatabaseType.POSTGRES)
 public class PostgresDataSourceConfiguration extends DataSourceConfiguration {
 
-	private static PostgreSQLContainer<?> POSTGRESQL_CONTAINER;
+	private static PostgreSQLContainer<?> postgresqlContainer;
 
 	public PostgresDataSourceConfiguration(TestClass testClass, Environment environment) {
 		super(testClass, environment);
@@ -44,18 +44,18 @@ public class PostgresDataSourceConfiguration extends DataSourceConfiguration {
 	@Override
 	protected DataSource createDataSource() {
 
-		if (POSTGRESQL_CONTAINER == null) {
+		if (postgresqlContainer == null) {
 
 			PostgreSQLContainer<?> container = new PostgreSQLContainer<>("postgres:14.3");
 			container.start();
 
-			POSTGRESQL_CONTAINER = container;
+			postgresqlContainer = container;
 		}
 
 		PGSimpleDataSource dataSource = new PGSimpleDataSource();
-		dataSource.setUrl(POSTGRESQL_CONTAINER.getJdbcUrl());
-		dataSource.setUser(POSTGRESQL_CONTAINER.getUsername());
-		dataSource.setPassword(POSTGRESQL_CONTAINER.getPassword());
+		dataSource.setUrl(postgresqlContainer.getJdbcUrl());
+		dataSource.setUser(postgresqlContainer.getUsername());
+		dataSource.setPassword(postgresqlContainer.getPassword());
 
 		return dataSource;
 	}

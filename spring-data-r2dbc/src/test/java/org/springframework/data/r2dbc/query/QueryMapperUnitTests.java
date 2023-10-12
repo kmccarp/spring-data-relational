@@ -55,7 +55,7 @@ import org.testcontainers.shaded.com.fasterxml.jackson.databind.node.TextNode;
  */
 class QueryMapperUnitTests {
 
-	private BindTarget bindTarget = mock(BindTarget.class);
+    private final BindTarget bindTarget = mock(BindTarget.class);
 	private QueryMapper mapper = createMapper(PostgresDialect.INSTANCE);
 
 	QueryMapper createMapper(R2dbcDialect dialect) {

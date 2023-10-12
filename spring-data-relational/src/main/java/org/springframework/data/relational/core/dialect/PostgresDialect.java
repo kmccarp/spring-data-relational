@@ -86,7 +86,7 @@ public class PostgresDialect extends AbstractDialect {
 		return LIMIT_CLAUSE;
 	}
 
-	private final PostgresLockClause LOCK_CLAUSE = new PostgresLockClause(this.getIdentifierProcessing());
+	private static final PostgresLockClause LOCK_CLAUSE = new PostgresLockClause(this.getIdentifierProcessing());
 
 	@Override
 	public LockClause lock() {

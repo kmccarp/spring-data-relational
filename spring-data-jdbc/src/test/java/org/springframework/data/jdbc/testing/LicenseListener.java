@@ -54,7 +54,7 @@ class LicenseListener implements TestExecutionListener {
 			LicenseAcceptance.assertLicenseAccepted(imageName);
 		} catch (IllegalStateException e) {
 
-			if (environment.getProperty("on-missing-license", "fail").equals("ignore-test")) {
+			if ("ignore-test".equals(environment.getProperty("on-missing-license", "fail"))) {
 				throw new AssumptionViolatedException(e.getMessage(), e);
 			}
 

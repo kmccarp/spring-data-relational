@@ -149,7 +149,7 @@ public class JdbcRepositoryWithMapsIntegrationTests {
 				.isNotNull();
 
 		assertThat(reloaded.content.entrySet()) //
-				.extracting(e -> e.getKey(), e -> e.getValue().id, e -> e.getValue().content) //
+				.extracting(java.util.Map.Entry::getKey, e -> e.getValue().id, e -> e.getValue().content) //
 				.containsExactlyInAnyOrder( //
 						tuple("two", element2.id, "two changed"), //
 						tuple("three", element3.id, "three") //

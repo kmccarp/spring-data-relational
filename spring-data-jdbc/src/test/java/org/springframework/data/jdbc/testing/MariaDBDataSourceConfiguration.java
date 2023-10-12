@@ -39,7 +39,7 @@ import org.testcontainers.containers.MariaDBContainer;
 @ConditionalOnDatabase(DatabaseType.MARIADB)
 class MariaDBDataSourceConfiguration extends DataSourceConfiguration implements InitializingBean {
 
-	private static MariaDBContainer<?> MARIADB_CONTAINER;
+	private static MariaDBContainer<?> mariadbContainer;
 
 	public MariaDBDataSourceConfiguration(TestClass testClass, Environment environment) {
 		super(testClass, environment);
@@ -48,21 +48,21 @@ class MariaDBDataSourceConfiguration extends DataSourceConfiguration implements 
 	@Override
 	protected DataSource createDataSource() {
 
-		if (MARIADB_CONTAINER == null) {
+		if (mariadbContainer == null) {
 
 			MariaDBContainer<?> container = new MariaDBContainer<>("mariadb:10.8.3").withUsername("root").withPassword("")
 					.withConfigurationOverride("");
 			container.start();
 
-			MARIADB_CONTAINER = container;
+			mariadbContainer = container;
 		}
 
 		try {
 
 			MariaDbDataSource dataSource = new MariaDbDataSource();
-			dataSource.setUrl(MARIADB_CONTAINER.getJdbcUrl());
-			dataSource.setUser(MARIADB_CONTAINER.getUsername());
-			dataSource.setPassword(MARIADB_CONTAINER.getPassword());
+			dataSource.setUrl(mariadbContainer.getJdbcUrl());
+			dataSource.setUser(mariadbContainer.getUsername());
+			dataSource.setPassword(mariadbContainer.getPassword());
 			return dataSource;
 		} catch (SQLException sqlex) {
 			throw new RuntimeException(sqlex);

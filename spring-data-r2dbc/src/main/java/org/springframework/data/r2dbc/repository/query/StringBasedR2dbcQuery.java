@@ -155,8 +155,7 @@ public class StringBasedR2dbcQuery extends AbstractR2dbcQuery {
 
 	@Override
 	public String toString() {
-		String sb = getClass().getSimpleName() + " [" + expressionQuery.getQuery() + ']';
-		return sb;
+		return getClass().getSimpleName() + " [" + expressionQuery.getQuery() + ']';
 	}
 
 	private class ExpandedQuery implements PreparedOperation<String> {

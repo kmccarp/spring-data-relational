@@ -54,10 +54,12 @@ class ColumnPattern extends TypedExpressionPattern<Column> {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (obj == this)
-			return true;
-		if (obj == null || obj.getClass() != this.getClass())
-			return false;
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
 		var that = (ColumnPattern) obj;
 		return Objects.equals(this.columnName, that.columnName);
 	}

@@ -137,14 +137,17 @@ public class JdbcRepositoryBeforeSaveHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
-				return true;
-			if (!(o instanceof final ImmutableEntity other))
-				return false;
+            if (o == this) {
+                return true;
+            }
+            if (!(o instanceof final ImmutableEntity other)) {
+                return false;
+            }
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
-				return false;
+            if (!Objects.equals(this$id, other$id)) {
+                return false;
+            }
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
 			return Objects.equals(this$name, other$name);

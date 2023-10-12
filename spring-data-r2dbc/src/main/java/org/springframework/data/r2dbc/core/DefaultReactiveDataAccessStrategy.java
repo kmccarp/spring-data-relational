@@ -197,12 +197,7 @@ public class DefaultReactiveDataAccessStrategy implements ReactiveDataAccessStra
 		if (value.hasValue() && (value.getValue() instanceof Collection || value.getValue().getClass().isArray())) {
 			return true;
 		}
-
-		if (Collection.class.isAssignableFrom(value.getType()) || value.getType().isArray()) {
-			return true;
-		}
-
-		return false;
+        return Collection.class.isAssignableFrom(value.getType()) || value.getType().isArray();
 	}
 
 	private Parameter getArrayValue(Parameter value, RelationalPersistentProperty property) {

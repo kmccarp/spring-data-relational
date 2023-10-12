@@ -32,8 +32,8 @@ class SelectListVisitor extends TypedSubtreeVisitor<SelectList> implements PartR
 	private final RenderContext context;
 	private final StringBuilder builder = new StringBuilder();
 	private final RenderTarget target;
-	private boolean requiresComma = false;
-	private ExpressionVisitor expressionVisitor;
+	private boolean requiresComma;
+    private final ExpressionVisitor expressionVisitor;
 	// subelements.
 
 	SelectListVisitor(RenderContext context, RenderTarget target) {

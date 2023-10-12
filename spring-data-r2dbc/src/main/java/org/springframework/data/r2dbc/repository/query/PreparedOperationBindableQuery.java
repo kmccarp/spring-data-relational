@@ -55,11 +55,11 @@ class PreparedOperationBindableQuery implements BindableQuery {
 		return preparedQuery.get();
 	}
 
-	/**
-	 * This class adapts {@link DatabaseClient.GenericExecuteSpec} to {@link BindTarget} allowing easy binding of query
-	 * parameters using {@link PreparedOperation}.
-	 */
-	static class BindSpecBindTargetAdapter implements BindTarget {
+    /**
+     * This class adapts {@link DatabaseClient.GenericExecuteSpec} to {@link BindTarget} allowing easy binding of query
+     * parameters using {@link PreparedOperation}.
+     */
+    static final class BindSpecBindTargetAdapter implements BindTarget {
 
 		DatabaseClient.GenericExecuteSpec bindSpec;
 

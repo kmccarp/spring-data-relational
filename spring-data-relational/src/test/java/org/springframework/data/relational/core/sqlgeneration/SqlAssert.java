@@ -88,7 +88,7 @@ class SqlAssert extends AbstractAssert<SqlAssert, PlainSelect> {
 		return new FunctionPattern(name, params);
 	}
 	static FunctionPattern func(String name, String ... params) {
-		return new FunctionPattern(name, Arrays.stream(params).map(p -> col(p)).collect(Collectors.toList()));
+		return new FunctionPattern(name, Arrays.stream(params).map(SqlAssert::col).collect(Collectors.toList()));
 	}
 
 	SqlAssert hasExactlyColumns(String... columns) {
@@ -172,7 +172,7 @@ class SqlAssert extends AbstractAssert<SqlAssert, PlainSelect> {
 	public JoinAssert hasJoin() {
 		List<Join> joins = actual.getJoins();
 
-		if (joins == null || joins.size() < 1) {
+		if (joins == null || joins.isEmpty()) {
 			throw failureWithActualExpected(actual, "select with a join", "Expected %s to contain a join but it doesn't.", actual);
 		}
 
@@ -220,8 +220,8 @@ class SqlAssert extends AbstractAssert<SqlAssert, PlainSelect> {
 			}
 
 			Stream<PlainSelect> joinStream = joins.stream() //
-					.map(j -> j.getRightItem()) //
-					.flatMap(ss -> subSelects(ss));
+					.map(Join::getRightItem) //
+					.flatMap(SqlAssert::subSelects);
 			return Stream.concat(fromStream, joinStream);
 		});
 	}

@@ -34,10 +34,10 @@ class SelectValidator extends AbstractImportValidator {
 	private final Stack<Select> selects = new Stack<>();
 
 	private int selectFieldCount;
-	private Set<TableLike> requiredBySelect = new HashSet<>();
-	private Set<TableLike> requiredByOrderBy = new HashSet<>();
+    private final Set<TableLike> requiredBySelect = new HashSet<>();
+    private final Set<TableLike> requiredByOrderBy = new HashSet<>();
 
-	private Set<TableLike> join = new HashSet<>();
+    private final Set<TableLike> join = new HashSet<>();
 
 	/**
 	 * Validates a {@link Select} statement.
