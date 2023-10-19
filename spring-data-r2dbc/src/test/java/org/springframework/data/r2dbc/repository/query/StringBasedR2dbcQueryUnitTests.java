@@ -295,7 +295,7 @@ public class StringBasedR2dbcQueryUnitTests {
 				.row(MockRow.builder().identified(0, LocalDate.class, value).build()).build();
 
 		StatementRecorder recorder = StatementRecorder.newInstance();
-		recorder.addStubbing(s -> s.equals("SELECT MAX(DATE)"), result);
+		recorder.addStubbing("SELECT MAX(DATE)"::equals, result);
 
 		DatabaseClient databaseClient = DatabaseClient.builder() //
 				.connectionFactory(recorder) //
@@ -388,6 +388,6 @@ public class StringBasedR2dbcQueryUnitTests {
 	}
 
 	enum MyEnum {
-		INSTANCE;
+		INSTANCE
 	}
 }

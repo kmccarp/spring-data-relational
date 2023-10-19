@@ -31,8 +31,12 @@ record Column(String name, String type, boolean nullable, boolean identity) {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+		if (this == o) {
+			return true;
+		}
+		if (o == null || getClass() != o.getClass()) {
+			return false;
+		}
 				Column that = (Column) o;
         return Objects.equals(name, that.name);
     }

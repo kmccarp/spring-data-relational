@@ -38,7 +38,7 @@ class Db2DataSourceConfiguration extends DataSourceConfiguration {
 	public static final String DOCKER_IMAGE_NAME = "ibmcom/db2:11.5.7.0a";
 	private static final Log LOG = LogFactory.getLog(Db2DataSourceConfiguration.class);
 
-	private static Db2Container DB_2_CONTAINER;
+	private static Db2Container db2Container;
 
 	public Db2DataSourceConfiguration(TestClass testClass, Environment environment) {
 		super(testClass, environment);
@@ -47,18 +47,18 @@ class Db2DataSourceConfiguration extends DataSourceConfiguration {
 	@Override
 	protected DataSource createDataSource() {
 
-		if (DB_2_CONTAINER == null) {
+		if (db2Container == null) {
 
 			LOG.info("DB2 starting...");
 			Db2Container container = new Db2Container(DOCKER_IMAGE_NAME).withReuse(true);
 			container.start();
 			LOG.info("DB2 started");
 
-			DB_2_CONTAINER = container;
+			db2Container = container;
 		}
 
-		return new DriverManagerDataSource(DB_2_CONTAINER.getJdbcUrl(),
-				DB_2_CONTAINER.getUsername(), DB_2_CONTAINER.getPassword());
+		return new DriverManagerDataSource(db2Container.getJdbcUrl(),
+				db2Container.getUsername(), db2Container.getPassword());
 	}
 
 	@Override

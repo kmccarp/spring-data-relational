@@ -260,8 +260,8 @@ public class RowDocumentResultSetExtractorUnitTests {
 				}).run(document -> {
 
 					assertThat(document).containsKey("without_ids");
-					List<RowDocument> dummy_list = document.getList("without_ids");
-					assertThat(dummy_list).hasSize(3).contains(new RowDocument().append("name", "Dummy Alfred"))
+					List<RowDocument> dummyList = document.getList("without_ids");
+					assertThat(dummyList).hasSize(3).contains(new RowDocument().append("name", "Dummy Alfred"))
 							.contains(new RowDocument().append("name", "Dummy Berta"))
 							.contains(new RowDocument().append("name", "Dummy Carl"));
 				});

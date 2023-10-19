@@ -39,7 +39,7 @@ import org.springframework.data.relational.core.mapping.RelationalPersistentProp
 public class PersistentPropertyPathExtensionUnitTests {
 
 	JdbcMappingContext context = new JdbcMappingContext();
-	private RelationalPersistentEntity<?> entity = context.getRequiredPersistentEntity(DummyEntity.class);
+	private final RelationalPersistentEntity<?> entity = context.getRequiredPersistentEntity(DummyEntity.class);
 
 	@Test // DATAJDBC-340
 	void isEmbedded() {

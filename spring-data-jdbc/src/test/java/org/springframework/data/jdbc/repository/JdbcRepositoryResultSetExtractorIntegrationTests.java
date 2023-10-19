@@ -101,7 +101,7 @@ public class JdbcRepositoryResultSetExtractorIntegrationTests {
 		Person person = people.get(0);
 		assertThat(person.getName()).isEqualTo(personName);
 		assertThat(person.getAddresses()).hasSize(2);
-		assertThat(person.getAddresses()).extracting(a -> a.getStreet()).containsExactlyInAnyOrder(street1, street2);
+		assertThat(person.getAddresses()).extracting(org.springframework.data.jdbc.repository.JdbcRepositoryResultSetExtractorIntegrationTests.Address::getStreet).containsExactlyInAnyOrder(street1, street2);
 	}
 
 	private MapSqlParameterSource buildAddressParameters(Long id, String streetName) {

@@ -676,17 +676,24 @@ public class EntityRowMapperUnitTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof Trivial)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof Trivial)) {
+				return false;
+			}
 			final Trivial other = (Trivial) o;
-			if (!other.canEqual((Object) this)) return false;
+			if (!other.canEqual((Object) this)) {
+				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name)) return false;
-			return true;
+			return !(this$name == null ? other$name != null : !this$name.equals(other$name));
 		}
 
 		protected boolean canEqual(final Object other) {
@@ -745,23 +752,35 @@ public class EntityRowMapperUnitTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof TrivialMapPropertiesToNullIfNotNeeded)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof TrivialMapPropertiesToNullIfNotNeeded)) {
+				return false;
+			}
 			final TrivialMapPropertiesToNullIfNotNeeded other = (TrivialMapPropertiesToNullIfNotNeeded) o;
-			if (!other.canEqual((Object) this)) return false;
+			if (!other.canEqual((Object) this)) {
+				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
-			if (this.getAge() != other.getAge()) return false;
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+				return false;
+			}
+			if (this.getAge() != other.getAge()) {
+				return false;
+			}
 			final Object this$phone = this.getPhone();
 			final Object other$phone = other.getPhone();
-			if (this$phone == null ? other$phone != null : !this$phone.equals(other$phone)) return false;
+			if (this$phone == null ? other$phone != null : !this$phone.equals(other$phone)) {
+				return false;
+			}
 			final Object this$isSupreme = this.getIsSupreme();
 			final Object other$isSupreme = other.getIsSupreme();
-			if (this$isSupreme == null ? other$isSupreme != null : !this$isSupreme.equals(other$isSupreme))
+			if (this$isSupreme == null ? other$isSupreme != null : !this$isSupreme.equals(other$isSupreme)) {
 				return false;
-			if (this.getReferenceToCustomer() != other.getReferenceToCustomer()) return false;
-			return true;
+			}
+			return this.getReferenceToCustomer() == other.getReferenceToCustomer();
 		}
 
 		protected boolean canEqual(final Object other) {
@@ -813,21 +832,29 @@ public class EntityRowMapperUnitTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this) return true;
-			if (!(o instanceof WithReference)) return false;
+			if (o == this) {
+				return true;
+			}
+			if (!(o instanceof WithReference)) {
+				return false;
+			}
 			final WithReference other = (WithReference) o;
-			if (!other.canEqual((Object) this)) return false;
+			if (!other.canEqual((Object) this)) {
+				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (this$id == null ? other$id != null : !this$id.equals(other$id)) return false;
+			if (this$id == null ? other$id != null : !this$id.equals(other$id)) {
+				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (this$name == null ? other$name != null : !this$name.equals(other$name)) return false;
+			if (this$name == null ? other$name != null : !this$name.equals(other$name)) {
+				return false;
+			}
 			final Object this$trivialId = this.getTrivialId();
 			final Object other$trivialId = other.getTrivialId();
-			if (this$trivialId == null ? other$trivialId != null : !this$trivialId.equals(other$trivialId))
-				return false;
-			return true;
+			return !(this$trivialId == null ? other$trivialId != null : !this$trivialId.equals(other$trivialId));
 		}
 
 		protected boolean canEqual(final Object other) {
@@ -1151,7 +1178,7 @@ public class EntityRowMapperUnitTests {
 		private int isThereAColumnNamed(String name) {
 
 			Optional<Map<String, Object>> first = values.stream().filter(s -> s.equals(name)).findFirst();
-			return (first.isPresent()) ? 1 : 0;
+			return first.isPresent() ? 1 : 0;
 		}
 
 		private boolean isAfterLast() {

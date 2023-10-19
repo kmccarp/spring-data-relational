@@ -56,7 +56,7 @@ public class JdbcRepositoryConfigExtensionUnitTests {
 		Collection<RepositoryConfiguration<RepositoryConfigurationSource>> configs = extension
 				.getRepositoryConfigurations(configurationSource, loader, true);
 
-		assertThat(configs).extracting(config -> config.getRepositoryInterface())
+		assertThat(configs).extracting(RepositoryConfiguration::getRepositoryInterface)
 				.containsExactly(SampleRepository.class.getName());
 	}
 

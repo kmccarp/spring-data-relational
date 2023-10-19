@@ -347,7 +347,7 @@ public class BasicJdbcConverter extends MappingRelationalConverter implements Jd
 		return (Object[]) source;
 	}
 
-	private class ReadingContext<T> {
+	private final class ReadingContext<T> {
 
 		private final RelationalPersistentEntity<T> entity;
 

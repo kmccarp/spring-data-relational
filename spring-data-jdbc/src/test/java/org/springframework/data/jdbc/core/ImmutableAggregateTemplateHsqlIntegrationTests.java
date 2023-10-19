@@ -324,22 +324,27 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final LegoSet other))
+			}
+			if (!(o instanceof final LegoSet other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (!Objects.equals(this$name, other$name))
+			if (!Objects.equals(this$name, other$name)) {
 				return false;
+			}
 			final Object this$manual = this.getManual();
 			final Object other$manual = other.getManual();
-			if (!Objects.equals(this$manual, other$manual))
+			if (!Objects.equals(this$manual, other$manual)) {
 				return false;
+			}
 			final Object this$author = this.getAuthor();
 			final Object other$author = other.getAuthor();
 			return Objects.equals(this$author, other$author);
@@ -400,14 +405,17 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Manual other))
+			}
+			if (!(o instanceof final Manual other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$content = this.getContent();
 			final Object other$content = other.getContent();
 			return Objects.equals(this$content, other$content);
@@ -456,14 +464,17 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Author other))
+			}
+			if (!(o instanceof final Author other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
 			return Objects.equals(this$name, other$name);
@@ -547,14 +558,17 @@ public class ImmutableAggregateTemplateHsqlIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final NonRoot other))
+			}
+			if (!(o instanceof final NonRoot other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
 			return Objects.equals(this$name, other$name);

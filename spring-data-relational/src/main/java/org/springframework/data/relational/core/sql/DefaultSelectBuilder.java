@@ -36,7 +36,7 @@ import org.springframework.lang.Nullable;
  */
 class DefaultSelectBuilder implements SelectBuilder, SelectAndFrom, SelectFromAndJoin, SelectWhereAndOr {
 
-	private boolean distinct = false;
+	private boolean distinct;
 	private final List<Expression> selectList = new ArrayList<>();
 	private final List<TableLike> from = new ArrayList<>();
 	private long limit = -1;

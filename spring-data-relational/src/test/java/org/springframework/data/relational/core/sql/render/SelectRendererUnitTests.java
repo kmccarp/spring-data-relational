@@ -480,11 +480,11 @@ class SelectRendererUnitTests {
 	void shouldRenderWithRenderContext() {
 
 		Table table = Table.create(SqlIdentifier.quoted("my_table"));
-		Table join_table = Table.create(SqlIdentifier.quoted("join_table"));
+		Table joinTable = Table.create(SqlIdentifier.quoted("join_table"));
 		Select select = Select.builder() //
 				.select(Functions.count(table.asterisk()).as("counter"), table.column(SqlIdentifier.quoted("reserved_keyword"))) //
 				.from(table) //
-				.join(join_table).on(table.column("source")).equals(join_table.column("target")).build();
+				.join(joinTable).on(table.column("source")).equals(joinTable.column("target")).build();
 
 		String rendered = SqlRenderer.create(new RenderContextFactory(PostgresDialect.INSTANCE).createRenderContext())
 				.render(select);
@@ -496,8 +496,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1034
 	void simpleComparisonWithStringArguments() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name"), table_user.column("age")).from(table_user)
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name"), tableUser.column("age")).from(tableUser)
 				.where(Comparison.create("age", ">", 20)).build();
 
 		String rendered = SqlRenderer.toString(select);
@@ -507,9 +507,9 @@ class SelectRendererUnitTests {
 	@Test // GH-1034
 	void simpleComparison() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name"), table_user.column("age")).from(table_user)
-				.where(Comparison.create(table_user.column("age"), ">", SQL.literalOf(20))).build();
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name"), tableUser.column("age")).from(tableUser)
+				.where(Comparison.create(tableUser.column("age"), ">", SQL.literalOf(20))).build();
 
 		String rendered = SqlRenderer.toString(select);
 		assertThat(rendered).isEqualTo("SELECT User.name, User.age FROM User WHERE User.age > 20");
@@ -518,8 +518,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1066
 	void shouldRenderCast() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(Expressions.cast(table_user.column("name"), "VARCHAR2")).from(table_user)
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(Expressions.cast(tableUser.column("name"), "VARCHAR2")).from(tableUser)
 				.build();
 
 		String rendered = SqlRenderer.toString(select);
@@ -529,8 +529,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1076
 	void rendersLimitAndOffset() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name")).from(table_user).limitOffset(10, 5).build();
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name")).from(tableUser).limitOffset(10, 5).build();
 
 		String rendered = SqlRenderer.toString(select);
 		assertThat(rendered).isEqualTo("SELECT User.name FROM User OFFSET 5 ROWS FETCH FIRST 10 ROWS ONLY");
@@ -539,8 +539,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1076
 	void rendersLimit() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name")).from(table_user) //
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name")).from(tableUser) //
 				.limit(3) //
 				.build();
 
@@ -551,8 +551,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1076
 	void rendersLock() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name")).from(table_user) //
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name")).from(tableUser) //
 				.lock(LockMode.PESSIMISTIC_READ) //
 				.build();
 
@@ -563,8 +563,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1076
 	void rendersLockAndOffset() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name")).from(table_user).offset(3) //
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name")).from(tableUser).offset(3) //
 				.lock(LockMode.PESSIMISTIC_WRITE) //
 				.build();
 
@@ -575,8 +575,8 @@ class SelectRendererUnitTests {
 	@Test // GH-1076
 	void rendersLockAndOffsetUsingDialect() {
 
-		Table table_user = SQL.table("User");
-		Select select = StatementBuilder.select(table_user.column("name")).from(table_user).limitOffset(3, 6) //
+		Table tableUser = SQL.table("User");
+		Select select = StatementBuilder.select(tableUser.column("name")).from(tableUser).limitOffset(3, 6) //
 				.lock(LockMode.PESSIMISTIC_WRITE) //
 				.build();
 

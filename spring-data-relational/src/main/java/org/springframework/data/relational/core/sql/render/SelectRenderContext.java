@@ -73,7 +73,7 @@ public interface SelectRenderContext {
 			OptionalLong offset = select.getOffset();
 			LockMode lockMode = select.getLockMode();
 
-			String lockPrefix = (lockMode == null) ? "" : " FOR UPDATE";
+			String lockPrefix = lockMode == null ? "" : " FOR UPDATE";
 
 			if (limit.isPresent() && offset.isPresent()) {
 				return String.format("%s OFFSET %d ROWS FETCH FIRST %d ROWS ONLY", lockPrefix, offset.getAsLong(),

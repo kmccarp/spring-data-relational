@@ -418,10 +418,8 @@ public class SimpleR2dbcRepository<T, ID> implements R2dbcRepository<T, ID> {
 					return queryToUse;
 				}).all() //
 						.collectList() //
-						.map(content -> {
-							return ScrollDelegate.createWindow(content, limit,
-									OffsetScrollPosition.positionFunction(osp.getOffset()));
-						});
+						.map(content -> ScrollDelegate.createWindow(content, limit,
+									OffsetScrollPosition.positionFunction(osp.getOffset())));
 			}
 
 			return super.scroll(scrollPosition);

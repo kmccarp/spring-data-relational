@@ -31,7 +31,7 @@ import java.util.List;
 public class AnalyticFunctionPattern extends TypedExpressionPattern<AnalyticExpression> {
 
 	private final ExpressionPattern partitionBy;
-	private String functionName;
+	private final String functionName;
 
 	public AnalyticFunctionPattern(String rowNumber, ExpressionPattern partitionBy) {
 

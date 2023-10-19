@@ -479,8 +479,9 @@ public interface DbAction<T> {
 		default Pair<PersistentPropertyPath<RelationalPersistentProperty>, Object> getQualifier() {
 
 			Map<PersistentPropertyPath<RelationalPersistentProperty>, Object> qualifiers = getQualifiers();
-			if (qualifiers.size() == 0)
+			if (qualifiers.size() == 0) {
 				return null;
+			}
 
 			if (qualifiers.size() > 1) {
 				throw new IllegalStateException("Can't handle more then one qualifier");

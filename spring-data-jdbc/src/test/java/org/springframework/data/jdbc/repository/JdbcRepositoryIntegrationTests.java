@@ -1502,22 +1502,27 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Root other))
+			}
+			if (!(o instanceof final Root other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (!Objects.equals(this$name, other$name))
+			if (!Objects.equals(this$name, other$name)) {
 				return false;
+			}
 			final Object this$intermediate = this.getIntermediate();
 			final Object other$intermediate = other.getIntermediate();
-			if (!Objects.equals(this$intermediate, other$intermediate))
+			if (!Objects.equals(this$intermediate, other$intermediate)) {
 				return false;
+			}
 			final Object this$intermediates = this.getIntermediates();
 			final Object other$intermediates = other.getIntermediates();
 			return Objects.equals(this$intermediates, other$intermediates);
@@ -1605,22 +1610,27 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Intermediate other))
+			}
+			if (!(o instanceof final Intermediate other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (!Objects.equals(this$name, other$name))
+			if (!Objects.equals(this$name, other$name)) {
 				return false;
+			}
 			final Object this$leaf = this.getLeaf();
 			final Object other$leaf = other.getLeaf();
-			if (!Objects.equals(this$leaf, other$leaf))
+			if (!Objects.equals(this$leaf, other$leaf)) {
 				return false;
+			}
 			final Object this$leaves = this.getLeaves();
 			final Object other$leaves = other.getLeaves();
 			return Objects.equals(this$leaves, other$leaves);
@@ -1665,14 +1675,17 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Leaf other))
+			}
+			if (!(o instanceof final Leaf other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
 			return Objects.equals(this$name, other$name);
@@ -1799,10 +1812,12 @@ public class JdbcRepositoryIntegrationTests {
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 			DummyEntity that = (DummyEntity) o;
 			return flag == that.flag && Objects.equals(name, that.name) && Objects.equals(pointInTime, that.pointInTime)
 					&& Objects.equals(offsetDateTime, that.offsetDateTime) && Objects.equals(idProp, that.idProp)
@@ -1835,10 +1850,12 @@ public class JdbcRepositoryIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final DtoProjection other))
+			}
+			if (!(o instanceof final DtoProjection other)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
 			return Objects.equals(this$name, other$name);

@@ -149,22 +149,27 @@ public class PostgresDialectIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Customer other))
+			}
+			if (!(o instanceof final Customer other)) {
 				return false;
+			}
 			final Object this$id = this.getId();
 			final Object other$id = other.getId();
-			if (!Objects.equals(this$id, other$id))
+			if (!Objects.equals(this$id, other$id)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
-			if (!Objects.equals(this$name, other$name))
+			if (!Objects.equals(this$name, other$name)) {
 				return false;
+			}
 			final Object this$personData = this.getPersonData();
 			final Object other$personData = other.getPersonData();
-			if (!Objects.equals(this$personData, other$personData))
+			if (!Objects.equals(this$personData, other$personData)) {
 				return false;
+			}
 			final Object this$sessionData = this.getSessionData();
 			final Object other$sessionData = other.getSessionData();
 			return Objects.equals(this$sessionData, other$sessionData);

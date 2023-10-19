@@ -322,10 +322,12 @@ public class JdbcRepositoryWithListsIntegrationTests {
 		}
 
 		public boolean equals(final Object o) {
-			if (o == this)
+			if (o == this) {
 				return true;
-			if (!(o instanceof final Leaf other))
+			}
+			if (!(o instanceof final Leaf other)) {
 				return false;
+			}
 			final Object this$name = this.getName();
 			final Object other$name = other.getName();
 			return Objects.equals(this$name, other$name);

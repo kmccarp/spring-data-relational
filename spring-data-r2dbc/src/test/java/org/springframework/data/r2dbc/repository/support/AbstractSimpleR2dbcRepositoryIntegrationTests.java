@@ -1106,10 +1106,12 @@ public abstract class AbstractSimpleR2dbcRepositoryIntegrationTests extends R2db
 
 		@Override
 		public boolean equals(Object o) {
-			if (this == o)
+			if (this == o) {
 				return true;
-			if (o == null || getClass() != o.getClass())
+			}
+			if (o == null || getClass() != o.getClass()) {
 				return false;
+			}
 			LegoSetWithNonScalarId that = (LegoSetWithNonScalarId) o;
 			return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(manual, that.manual)
 					&& Objects.equals(extra, that.extra);
